@@ -1,6 +1,8 @@
 from tkinter import*
 from PIL import ImageTk, Image
 
+names_list=[]
+
 class Quizstarter:
     def __init__(self, master):
         background_color="#b7d7bf"
@@ -48,9 +50,7 @@ class Quizstarter:
        self.quiz_frame.destroy()
 
 
-    #command for exit button
-    def quiz_exit(self):
-     self.quiz_frame.destroy()
+
 
 
 
