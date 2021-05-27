@@ -46,10 +46,33 @@ class Quizstarter:
        name = self.entry_box.get()
        print(names_list)
        self.quiz_frame.destroy()
+       Quizpicker(root)
     
     #command for exit button
     def quiz_exit(self):
       exit()
+
+      #page where user will pick which topic they want to learn
+
+
+class Quizpicker:
+    def __init__(self, master):
+        background_color="#b7d7bf"
+        #frame setup
+        self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
+        self.quiz_frame.grid()
+
+        self.heading_label=Label(self.quiz_frame, text="Hello " + names_list + " ,what topic do you want to learn about?", font=("Tw Cent Mt", "14", "bold"))
+        self.heading_label.grid(row=1)
+
+        self.algebra_button = Button(self.quiz_frame, text="Algebra(Level 1)", command=self.algebra)
+        self.algebra_button.grid(row= 2)
+
+        self.trigonometry_button = Button(self.quiz_frame, text="Trigonometry")
+        self.trigonometry_button.grid(row=3)
+
+        self.calculus_button = Button(self.quiz_frame, text="Calculus")
+        self.calculus_button.grid(row=4)
 
 
 
