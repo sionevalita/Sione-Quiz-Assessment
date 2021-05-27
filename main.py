@@ -49,7 +49,7 @@ class Quizstarter:
     
     #command for exit button
     def quiz_exit(self):
-      self.quiz_frame.destroy()
+      exit()
 
 
 
