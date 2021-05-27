@@ -23,6 +23,7 @@ class Quizstarter:
         #exit button for rage quitters      
         self.exit_button = Button(self.quiz_frame, text="Exit", bg= "red", command = self.quiz_exit)
         self.exit_button.grid(row=5)
+        #self.exit_button.place(x=-90, y=208)
 
         #continue Button
         self.continue_button = Button(self.quiz_frame, text="continue", bg="#d3d3d3", command=self.name_collection)
@@ -30,7 +31,7 @@ class Quizstarter:
 
         #image
         self.heading_image = Image.open("mrgs_logo.png")
-        Image.ANTIALIAS
+        self.heading_image = self.heading_image.resize((100,100), Image.ANTIALIAS)
         self.heading_image = ImageTk.PhotoImage(self.heading_image)
 
        #image Label
