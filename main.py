@@ -23,7 +23,7 @@ class Quizstarter:
         self.entry_box.grid(row=3, pady=10)
 
         #exit button for rage quitters      
-        self.exit_button = Button(self.quiz_frame, text="Exit", bg= "red", command = self.quiz_exit)
+        self.exit_button = Button(self.quiz_frame, text="Exit", bg= "red", command=self.quiz_exit)
         self.exit_button.grid(row=5)
         #self.exit_button.place(x=-90, y=208)
 
@@ -41,13 +41,15 @@ class Quizstarter:
        #self.heading_image.grid(row=0, column=1)
         self.image_label.grid(row=1)
 
-      
-
     #command for continue button
     def name_collection(self):
        name = self.entry_box.get()
        print(names_list)
        self.quiz_frame.destroy()
+    
+    #command for exit button
+    def quiz_exit(self):
+      self.quiz_frame.destroy()
 
 
 
