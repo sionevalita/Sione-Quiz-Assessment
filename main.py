@@ -217,7 +217,7 @@ class Quiz_Algebra:
         randomiser()
 
         #Question label widget 
-        self.question_label = Label(self.quiz_frame, text = algebra_questions_answers[algebra_qnum], font=("Tw Cent Mt", "18", "bold"),bg=background_color)
+        self.question_label = Label(self.quiz_frame, text = algebra_questions_answers[algebra_qnum][0], font=("Tw Cent Mt", "18", "bold"),bg=background_color)
         self.question_label.grid(row=0)
 
         #holds the value of radio buttons
