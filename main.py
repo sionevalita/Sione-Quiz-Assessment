@@ -206,6 +206,42 @@ class Quizpicker:
         self.calculus_button.grid(row=4)
 
 
+class Quiz_Algebra:
+  def __init__(self, master):
+        background_color="#b7d7bf"
+        #frame setup
+        self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
+        self.quiz_frame.grid()
+
+        #randomiser will randomly pick a question number
+        randomiser()
+
+        #Question label widget 
+        self.question_label = Label(self.quiz_frame, text = algebra_questions_answers[algebra_qnum], font=("Tw Cent Mt", "18", "bold"),bg=background_color)
+        self.question_label.grid(row=0)
+
+        #holds the value of radio buttons
+        self.var1=IntVar()
+
+        #radio button 1
+        self.ac1= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][1], font=("Tw Cent Mt", "18", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
+        self.ac1.grid(row=1)
+
+        #radio button 2
+        self.ac2= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][2], font=("Tw Cent Mt", "18", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
+        self.ac2.grid(row=2)
+
+        #radio button 3
+        self.ac3= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][3], font=("Tw Cent Mt", "18", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
+        self.ac3.grid(row=3)
+
+        #radio button 4
+        self.ac4= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][4], font=("Tw Cent Mt", "18", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
+        self.ac4.grid(row=4)
+
+        #confirm Button
+        self.confirm_button = Button(self.quiz_frame, text="Confirm")
+        self.confirm_button.grid(row=5)
 
 
 
