@@ -3,6 +3,48 @@ from PIL import ImageTk, Image
 
 names_list=[]
 
+algebra_questions_answers ={
+  1:["What does a linear graph look like?",
+  'A donut',
+  'A straight line',
+  'A long curve',
+  'Squilliams forehead wrinkles',
+  'A straight line',
+  2], #index 6 will show the index position of the right answer
+
+  2:["What shape is a parabolic graph?",
+  'A straight line',
+  'A circle',
+  'A curve',
+  'Godzilla',
+  'A curve',
+  3],#index 6 will show the index position of the right answer
+
+  3:["12=3x, To solve for x what do you do?",
+  'multiply x by 3',
+  'divide 3 to both sides',
+  'divide 3 to just 3x',
+  'run around the street',
+  'divide 3 to both sides',
+  2],#index 6 will be the index position of the right algebra_questions_answers
+
+  4:["When solving for a variable in an equation, what do you use?",
+  'A car',
+  'BEDMAS',
+  'Trigonometry',
+  'Statistics',
+  'BEDMAS',
+  2],#index 6 will be the index position of the right algebra_questions_answers
+
+  5:["Solve for y: 3y=18",
+  'y=2',
+  'no possible answer',
+  'y=3',
+  'y=8',
+  'y=3',
+  3]#index 6 will be the index position of the right answer
+}
+
 class Quizstarter:
     def __init__(self, master):
         background_color="#b7d7bf"
