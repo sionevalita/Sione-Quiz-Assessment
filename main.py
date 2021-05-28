@@ -87,7 +87,48 @@ trigonemtry_questions_answers={
 1],#index 6 item 7 will be the index position of the right answer
 }
 
+calculus_questions_answers={
+1:["Based on Degree two function: ? x (? f) = ?",
+'0',
+'1',
+'-1',
+'None of these',
+'0',
+1],#index 6 item 7 will be the index position of the right answer
 
+2:["Onto function is also called",
+'Injective function',
+'Surjective function',
+'Bijective function',
+'None of these',
+'Surjective function',
+2],#index 6 item 7 will be the index position of the right answer
+
+3:["An ordered pair is represented by",
+'(Output, Output)',
+'(Input, Input)',
+'(Output, Input)',
+'(Input, Output)',
+'(Input, Output)',
+4],#index 6 item 7 will be the index position of the right answer
+
+4:["Bijective function is also called as",
+'One to one function',
+'Many to one function',
+'Onto Function',
+'One-one correspondence',
+'One-one correspondence',
+4],#index 6 item 7 will be the index position of the right answer
+
+5:["If (a, b) ∈ R then (b, a) ∈ R, for all a & b ∈ A, then a relation R on a set A is",
+'Inverse Relation',
+'Reflexive Relation',
+'Symmetric Relation',
+'Transitive Relation',
+'Symmetric Relation',
+3],#index 6 item 7 will be the index position of the right answer
+
+}
 
 
 class Quizstarter:
