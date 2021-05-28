@@ -1,4 +1,5 @@
 from tkinter import*
+import random
 from PIL import ImageTk, Image
 
 names_list=[]
@@ -127,9 +128,10 @@ calculus_questions_answers={
 'Transitive Relation',
 'Symmetric Relation',
 3],#index 6 item 7 will be the index position of the right answer
-
 }
 
+def randomiser():
+  randomiser
 
 class Quizstarter:
     def __init__(self, master):
@@ -219,6 +221,9 @@ class Quizpicker:
 
 
 
+
+
+randomiser()
 #***********starting point************#
 if __name__ == "__main__":
   root = Tk()
