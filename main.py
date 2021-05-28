@@ -45,6 +45,51 @@ algebra_questions_answers ={
   3]#index 6 will be the index position of the right answer
 }
 
+
+trigonemtry_questions_answers={
+1:["What is a more efficient way of remembering the trigonometry functions?",
+'Google it',
+'S0H CUT T0@',
+'SOH CAH TOA',
+'BEDMAS',
+'SOH CAH TOA',
+3],#index 6 will be the index position of the right algebra_questions_answers
+
+2:["What is the longest side of a triangle called?",
+'hypotenuse',
+'adjacent',
+'the longest side',
+'opposite',
+'hypotenuse',
+1],#index 6 will be the index position of the right algebra_questions_answers
+
+3:["What does the theta symbol Ø mean?",
+'A zero',
+'Angle of the triangle',
+'It means nothing',
+'The tallest point in a triangle',
+'Angle of the triangle',
+2],#index 6 item 7 is the index position of the right answer
+
+4:["If the angle of a triangle is 90° and the hypotenuse is 30cm, how do you calculate opposite and how long is it??",
+'Opposite = 30 x cos90 = 0cm',
+'Opposite = 90 x tan30 = 51.96cm',
+'Opposite = 60cm because I said so',
+'Opposite = 30 x sin90= 30cm',
+'Opposite = 30 x cos90 = 0cm',
+1],#index 6 item 7 will be the index position of the right answer
+
+5:["The side next to the angle is ________ and the side opposite to the angle is ________",'hypotenuse and opposite',
+'adjacent and opposite',
+'opposite and hypotenuse',
+'opposite and opposite',
+'adjacent and opposite',
+1],#index 6 item 7 will be the index position of the right answer
+}
+
+
+
+
 class Quizstarter:
     def __init__(self, master):
         background_color="#b7d7bf"
