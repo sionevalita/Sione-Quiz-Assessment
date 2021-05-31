@@ -215,7 +215,7 @@ class Quizpicker:
 
         #command for algebra button that directs the user to the algebra quiz 
     def quiz_algebra(self):
-        self.quiz_frame.destroy
+        self.quiz_frame.destroy()
         Quiz_Algebra(root)
 
 
