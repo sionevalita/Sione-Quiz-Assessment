@@ -3,6 +3,7 @@ import random
 from PIL import ImageTk, Image
 
 names_list=[]
+asked_algebra=[]
 
 algebra_questions_answers ={
   1:["What does a linear graph look like?",
@@ -132,6 +133,13 @@ calculus_questions_answers={
 
 def randomiser():
   randomiser
+  global algebra_qnum
+  algebra_qnum = random.randint(1,5)
+  if algebra_qnum not in asked_algebra:
+    asked_algebra.append(algebra_qnum)
+  elif algebra_qnum in asked_algebra:
+    randomiser()
+
 
 class Quizstarter:
     def __init__(self, master):
@@ -196,7 +204,7 @@ class Quizpicker:
         self.heading_label=Label(self.quiz_frame, text="Hello " + names_list[0] + ", what topic do you want to learn about?",font=("Tw Cent Mt", "14", "bold"))
         self.heading_label.grid(row=1)
 
-        self.algebra_button = Button(self.quiz_frame, text="Algebra(Level 1)")
+        self.algebra_button = Button(self.quiz_frame, text="Algebra(Level 1)", command=self.quiz_algebra)
         self.algebra_button.grid(row= 2)
 
         self.trigonometry_button = Button(self.quiz_frame, text="Trigonometry")
@@ -204,6 +212,12 @@ class Quizpicker:
 
         self.calculus_button = Button(self.quiz_frame, text="Calculus")
         self.calculus_button.grid(row=4)
+
+        #command for algebra button that directs the user to the algebra quiz 
+    def quiz_algebra(self):
+        self.quiz_frame.destroy
+        Quiz_Algebra(root)
+
 
 
 class Quiz_Algebra:
