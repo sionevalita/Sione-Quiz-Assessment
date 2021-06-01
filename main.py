@@ -275,7 +275,7 @@ class Quiz_Algebra:
 
 class Quiz_Trig:
   def __init__(self,master):
-        background_color="#b7d7bf"
+        background_color = "#b7d7bf"
         #frame setup
         self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
         self.quiz_frame.grid()
