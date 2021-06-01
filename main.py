@@ -5,6 +5,7 @@ from PIL import ImageTk, Image
 names_list=[]
 asked_algebra=[]
 asked_trig=[]
+asked_calculus=[]
 
 algebra_questions_answers ={
   1:["What does a linear graph look like?",
@@ -147,6 +148,13 @@ def randomiser():
     asked_trig.append(trig_qnum)
   elif trig_qnum in asked_trig:
     randomiser() 
+
+  global calculus_qnum
+  calculus_qnum = random.randint(1,5)
+  if calculus_qnum not in asked_calculus:
+    asked_calculus.append(calculus_qnum)
+  elif calculus_qnum in asked_calculus:
+    randomiser()
   
 
 
@@ -219,7 +227,7 @@ class Quizpicker:
         self.trigonometry_button = Button(self.quiz_frame, text="Trigonometry", command=self.quiz_trig)
         self.trigonometry_button.grid(row=3)
 
-        self.calculus_button = Button(self.quiz_frame, text="Calculus")
+        self.calculus_button = Button(self.quiz_frame, text="Calculus", command = self.Quiz_calculus)
         self.calculus_button.grid(row=4)
 
         #command for algebra button that directs the user to the algebra quiz 
@@ -232,10 +240,15 @@ class Quizpicker:
         self.quiz_frame.destroy()
         Quiz_Trig(root)
 
+        #command for calculus button that directs the user to the calculus quiz 
+    def Quiz_calculus(self):
+        self.quiz_frame.destroy()
+        Quiz_calculus(root)
+
 
 
 class Quiz_Algebra:
-  def __init__(self, master):
+    def __init__(self, master):
         background_color="#b7d7bf"
         #frame setup
         self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
@@ -303,6 +316,45 @@ class Quiz_Trig:
 
         #radio button 4
         self.ac4= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][4], font=("Tw Cent Mt", "18", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
+        self.ac4.grid(row=4)
+
+        #confirm Button
+        self.confirm_button = Button(self.quiz_frame, text="Confirm")
+        self.confirm_button.grid(row=5)
+
+
+
+class Quiz_calculus:
+  def __init__(self, master):
+        background_color="#b7d7bf"
+        #frame setup
+        self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
+        self.quiz_frame.grid()
+
+        #randomiser will randomly pick a question number
+        randomiser()
+
+        #Question label widget 
+        self.question_label = Label(self.quiz_frame, text = calculus_questions_answers[calculus_qnum][0],bg=background_color)
+        self.question_label.grid(row=0)
+
+        #holds the value of radio buttons
+        self.var1=IntVar()
+
+        #radio button 1
+        self.ac1= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][1], font=("Tw Cent Mt", "18", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
+        self.ac1.grid(row=1)
+
+        #radio button 2
+        self.ac2= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][2], font=("Tw Cent Mt", "18", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
+        self.ac2.grid(row=2)
+
+        #radio button 3
+        self.ac3= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][3], font=("Tw Cent Mt", "18", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
+        self.ac3.grid(row=3)
+
+        #radio button 4
+        self.ac4= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][4], font=("Tw Cent Mt", "18", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
         self.ac4.grid(row=4)
 
         #confirm Button
