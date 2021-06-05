@@ -133,28 +133,29 @@ calculus_questions_answers={
 3],#index 6 item 7 will be the index position of the right answer
 }
 
-def randomiser():
-  randomiser
+def algebra_randomiser():
   global algebra_qnum
   algebra_qnum = random.randint(1,5)
   if algebra_qnum not in asked_algebra:
     asked_algebra.append(algebra_qnum)
   elif algebra_qnum in asked_algebra:
-    randomiser()
+    algebra_randomiser()
 
+def trig_randomiser():
   global trig_qnum
   trig_qnum = random.randint(1,5)
   if trig_qnum not in asked_trig:
     asked_trig.append(trig_qnum)
   elif trig_qnum in asked_trig:
-    randomiser() 
+    trig_randomiser() 
 
+def calculus_randomiser():
   global calculus_qnum
   calculus_qnum = random.randint(1,5)
   if calculus_qnum not in asked_calculus:
     asked_calculus.append(calculus_qnum)
   elif calculus_qnum in asked_calculus:
-    randomiser()
+    calculus_randomiser()
   
 
 
@@ -376,7 +377,6 @@ class Quiz_calculus:
 
 
 
-randomiser()
 #***********starting point************#
 if __name__ == "__main__":
   root = Tk()
