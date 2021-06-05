@@ -265,19 +265,19 @@ class Quiz_Algebra:
         self.var1=IntVar()
 
         #radio button 1
-        self.ac1= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][1], font=("Tw Cent Mt", "18", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
+        self.ac1= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][1], font=("Tw Cent Mt", "11", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
         self.ac1.grid(row=1)
 
         #radio button 2
-        self.ac2= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][2], font=("Tw Cent Mt", "18", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
+        self.ac2= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][2], font=("Tw Cent Mt", "11", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
         self.ac2.grid(row=2)
 
         #radio button 3
-        self.ac3= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][3], font=("Tw Cent Mt", "18", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
+        self.ac3= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][3], font=("Tw Cent Mt", "11", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
         self.ac3.grid(row=3)
 
         #radio button 4
-        self.ac4= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][4], font=("Tw Cent Mt", "18", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
+        self.ac4= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][4], font=("Tw Cent Mt", "11", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
         self.ac4.grid(row=4)
 
         #confirm Button
