@@ -256,10 +256,10 @@ class Quiz_Algebra:
         self.quiz_frame.grid()
 
         #randomiser will randomly pick a question number
-        randomiser()
+        algebra_randomiser()
 
         #Question label widget 
-        self.question_label = Label(self.quiz_frame, text = algebra_questions_answers[algebra_qnum][0],bg=background_color)
+        self.question_label = Label(self.quiz_frame, text = algebra_questions_answers[algebra_qnum][0],bg=background_color, font=("Tw Cent Mt", "11", "bold", "italic"))
         self.question_label.grid(row=0)
 
         #holds the value of radio buttons
@@ -284,6 +284,24 @@ class Quiz_Algebra:
         #confirm Button
         self.confirm_button = Button(self.quiz_frame, text="Confirm")
         self.confirm_button.grid(row=5)
+
+        #score label
+        self.score_label = Label(self.quiz_frame, text="SCORE")
+        self.score_label.grid(row=6, pady=10)
+
+    #Method to randomise question label and radio buttons 
+    def algebra_questions_setup(self):
+      algebra_randomiser()
+      self.var(0)
+      self.question_label.config(text=algebra_questions_answers[algebra_qnum][0])
+      self.ac1.config(text=algebra_questions_answers[algebra_qnum][1])
+      self.ac2.config(text=algebra_questions_answers[algebra_qnum][2])
+      self.ac3.config(text=algebra_questions_answers[algebra_qnum][3])
+      self.ac4.config(text=algebra_questions_answers[algebra_qnum][4])
+
+    
+
+
 
 
 
