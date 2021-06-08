@@ -50,7 +50,7 @@ algebra_questions_answers ={
 }
 
 
-trigonemtry_questions_answers={
+trigonometry_questions_answers={
 1:["What is a more efficient way of remembering the trigonometry functions?",
 'Google it',
 'S0H CUT T0@',
@@ -306,7 +306,7 @@ class Quiz_Algebra:
 
 
 class Quiz_Trig:
-  def __init__(self,master):
+    def __init__(self,master):
         background_color = "#b7d7bf"
         #frame setup
         self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
@@ -316,30 +316,41 @@ class Quiz_Trig:
         randomiser()
 
         #Question label widget 
-        self.question_label = Label(self.quiz_frame, text = trigonemtry_questions_answers[trig_qnum][0],bg=background_color)
+        self.question_label = Label(self.quiz_frame, text = trigonometry_questions_answers[trig_qnum][0],bg=background_color)
         self.question_label.grid(row=0)
          #holds the value of radio buttons
         self.var1=IntVar()
 
         #radio button 1
-        self.ac1= Radiobutton(self.quiz_frame, text=trigonemtry_questions_answers[trig_qnum][1], font=("Tw Cent Mt", "18", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
+        self.ac1= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][1], font=("Tw Cent Mt", "18", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
         self.ac1.grid(row=1)
 
         #radio button 2
-        self.ac2= Radiobutton(self.quiz_frame, text=trigonemtry_questions_answers[trig_qnum][2], font=("Tw Cent Mt", "18", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
+        self.ac2= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][2], font=("Tw Cent Mt", "18", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
         self.ac2.grid(row=2)
 
         #radio button 3
-        self.ac3= Radiobutton(self.quiz_frame, text=trigonemtry_questions_answers[trig_qnum][3], font=("Tw Cent Mt", "18", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
+        self.ac3= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][3], font=("Tw Cent Mt", "18", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
         self.ac3.grid(row=3)
 
         #radio button 4
-        self.ac4= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][4], font=("Tw Cent Mt", "18", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
+        self.ac4= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[algebra_qnum][4], font=("Tw Cent Mt", "18", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
         self.ac4.grid(row=4)
 
         #confirm Button
         self.confirm_button = Button(self.quiz_frame, text="Confirm")
         self.confirm_button.grid(row=5)
+
+    #Method that will randomise questions and answer choices
+    def trig_questions_setup(self):
+      trig_randomiser()
+      self.question_label.config(text=trigonometry_questions_answers[trig_qnum][0])
+      self.ac1.config(text=trigonometry_questions_answers[trig_qnum][1])
+      self.ac2.config(text=trigonometry_questions_answers[trig_qnum][2])
+      self.ac3.config(text=trigonometry_questions_answers[trig_qnum][3])
+      self.ac4.config(text=trigonometry_questions_answers[trig_qnum][4])
+
+
 
 
 
