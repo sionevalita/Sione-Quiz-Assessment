@@ -313,7 +313,7 @@ class Quiz_Trig:
         self.quiz_frame.grid()
 
         #randomiser will randomly pick a question number
-        randomiser()
+        trig_randomiser()
 
         #Question label widget 
         self.question_label = Label(self.quiz_frame, text = trigonometry_questions_answers[trig_qnum][0],bg=background_color)
@@ -341,7 +341,7 @@ class Quiz_Trig:
         self.confirm_button = Button(self.quiz_frame, text="Confirm")
         self.confirm_button.grid(row=5)
 
-    #Method that will randomise questions and answer choices
+    #Method that will setup questions and answer choices when continue button is pressed
     def trig_questions_setup(self):
       trig_randomiser()
       self.question_label.config(text=trigonometry_questions_answers[trig_qnum][0])
@@ -390,6 +390,15 @@ class Quiz_calculus:
         #confirm Button
         self.confirm_button = Button(self.quiz_frame, text="Confirm")
         self.confirm_button.grid(row=5)
+
+        #Method that will setup questions and answer choices when continue button is pressed
+  def calculus_questions_setup(self):
+      calculus_randomiser()
+      self.question_label.config(text=calculus_questions_answers[calculus_qnum][0])
+      self.ac1.config(text=calculus_questions_answers[calculus_qnum][1])
+      self.ac2.config(text=calculus_questions_answers[calculus_qnum][2])
+      self.ac3.config(text=calculus_questions_answers[calculus_qnum][3])
+      self.ac4.config(text=calculus_questions_answers[calculus_qnum][4])
 
 
 
