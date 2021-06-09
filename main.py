@@ -310,9 +310,19 @@ class QuizAlgebra:
           score+=1
           score_label.configure(text=score)
           self.confirm_button.configure(text="Confirm")
+          self.algebra_questions_setup()
         else:
           score+=0
-          score_label.configure(text="The correct answer was:" + algebra_questions_answers[algebra_qnum][6])
+          score_label.configure(text="The correct answer was: " + algebra_questions_answers[algebra_qnum][6])
+          self.confirm_button.configure(text = "Confirm")
+          self.algebra_questions_setup()
+      else:
+        if choice == 0:
+          self.score_label.configure(text = "You have no selected an option.")
+          choice = self.var1.get()
+        else:
+          score+=0
+          score_label.configure(text= "The correct answer was: " + algebra_questions_answers[algebra_qnum][6])
           self.confirm_button.configure(text="Confirm")
           self.algebra_questions_setup()
           
