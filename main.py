@@ -159,7 +159,7 @@ def calculus_randomiser():
   
 
 
-class Quizstarter:
+class QuizStarter:
     def __init__(self, master):
         background_color="#b7d7bf"
         #frame setup
@@ -203,7 +203,7 @@ class Quizstarter:
        names_list.append(name)
        print(names_list)
        self.quiz_frame.destroy()
-       Quizpicker(root)
+       QuizPicker(root)
     
     #command for exit button
     def quiz_exit(self):
@@ -212,7 +212,7 @@ class Quizstarter:
 
 
 #page where user will pick which topic they want to learn
-class Quizpicker:
+class QuizPicker:
     def __init__(self, master):
         background_color="#b7d7bf"
         #frame setup
@@ -234,21 +234,21 @@ class Quizpicker:
         #command for algebra button that directs the user to the algebra quiz 
     def quiz_algebra(self):
         self.quiz_frame.destroy()
-        Quiz_Algebra(root)
+        QuizAlgebra(root)
 
         #command for trig button that directs the user to the trigonometry quiz
     def quiz_trig(self):
         self.quiz_frame.destroy()
-        Quiz_Trig(root)
+        QuizTrig(root)
 
         #command for calculus button that directs the user to the calculus quiz 
     def Quiz_calculus(self):
         self.quiz_frame.destroy()
-        Quiz_calculus(root)
+        QuizCalculus(root)
 
 
 
-class Quiz_Algebra:
+class QuizAlgebra:
     def __init__(self, master):
         background_color="#b7d7bf"
         #frame setup
@@ -260,33 +260,33 @@ class Quiz_Algebra:
 
         #Question label widget 
         self.question_label = Label(self.quiz_frame, text = algebra_questions_answers[algebra_qnum][0],bg=background_color, font=("Tw Cent Mt", "11", "bold", "italic"))
-        self.question_label.grid(row=0)
+        self.question_label.grid(row = 0)
 
         #holds the value of radio buttons
-        self.var1=IntVar()
+        self.var1 = IntVar()
 
         #radio button 1
-        self.ac1= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][1], font=("Tw Cent Mt", "11", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
-        self.ac1.grid(row=1)
+        self.ac1 = Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][1], font = ("Tw Cent Mt", "11", "bold"),value = 1, pady = 10,variable=self.var1, indicator = 0)
+        self.ac1.grid(row = 1)
 
         #radio button 2
-        self.ac2= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][2], font=("Tw Cent Mt", "11", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
-        self.ac2.grid(row=2)
+        self.ac2 = Radiobutton(self.quiz_frame, text = algebra_questions_answers[algebra_qnum][2], font = ("Tw Cent Mt", "11", "bold"),value = 2, pady = 10,variable=self.var1, indicator = 0)
+        self.ac2.grid(row = 2)
 
         #radio button 3
-        self.ac3= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][3], font=("Tw Cent Mt", "11", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
-        self.ac3.grid(row=3)
+        self.ac3= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][3], font = ("Tw Cent Mt", "11", "bold"),value = 3, pady = 10, variable=self.var1, indicator = 0)
+        self.ac3.grid(row = 3)
 
         #radio button 4
-        self.ac4= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][4], font=("Tw Cent Mt", "11", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
+        self.ac4 = Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][4], font = ("Tw Cent Mt", "11", "bold"),value=4, pady=10, variable=self.var1, indicator = 0)
         self.ac4.grid(row=4)
 
         #confirm Button
-        self.confirm_button = Button(self.quiz_frame, text="Confirm")
+        self.confirm_button = Button(self.quiz_frame, text="Confirm", command = self.algebra_test_progress)
         self.confirm_button.grid(row=5)
 
         #score label
-        self.score_label = Label(self.quiz_frame, text="SCORE")
+        self.score_label = Label(self.quiz_frame, text="SCORE", bg=background_color)
         self.score_label.grid(row=6, pady=10)
 
     #Method to randomise question label and radio buttons 
@@ -299,13 +299,40 @@ class Quiz_Algebra:
       self.ac3.config(text=algebra_questions_answers[algebra_qnum][3])
       self.ac4.config(text=algebra_questions_answers[algebra_qnum][4])
 
+    #This is the confirm button method that will take care of the quiz progress and will check if the answer choice the user picked is right or wrong
+    global score
+    def algebra_test_progress(self):
+      score=0
+      score_label = self.score_label
+      choice = self.var1.get()
+      if len(asked_algebra)>4:
+        if choice == algebra_questions_answers[algebra_qnum][6]:
+          score+=1
+          score_label.configure(text=score)
+          self.confirm_button.configure(text="Confirm")
+        else:
+          score+=0
+          score_label.configure(text="The correct answer was:" + algebra_questions_answers[algebra_qnum][6])
+          self.confirm_button.configure(text="Confirm")
+          self.algebra_questions_setup()
+          
+      
+
     
 
 
 
 
 
-class Quiz_Trig:
+
+
+
+
+
+
+
+
+class QuizTrig:
     def __init__(self,master):
         background_color = "#b7d7bf"
         #frame setup
@@ -354,7 +381,17 @@ class Quiz_Trig:
 
 
 
-class Quiz_calculus:
+
+
+
+
+
+
+
+
+
+
+class QuizCalculus:
   def __init__(self, master):
         background_color="#b7d7bf"
         #frame setup
@@ -362,7 +399,7 @@ class Quiz_calculus:
         self.quiz_frame.grid()
 
         #randomiser will randomly pick a question number
-        randomiser()
+        calculus_randomiser()
 
         #Question label widget 
         self.question_label = Label(self.quiz_frame, text = calculus_questions_answers[calculus_qnum][0],bg=background_color)
@@ -419,5 +456,5 @@ class Quiz_calculus:
 if __name__ == "__main__":
   root = Tk()
   root.title("MRGS Maths Quiz")
-  quizStarter_object = Quizstarter(root)
+  quizStarter_object = QuizStarter(root)
   root.mainloop()#window doesn't dissapear
