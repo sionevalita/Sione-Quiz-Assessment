@@ -1,6 +1,7 @@
 from tkinter import*
 import random
 from PIL import ImageTk, Image
+global score
 
 names_list=[]
 asked_algebra=[]
@@ -43,7 +44,7 @@ algebra_questions_answers ={
   5:["Solve for y: 3y=18",
   'y=2',
   'no possible answer',
-  'y=3',
+  'y=6',
   'y=8',
   'y=3',
   3]#index 6 will be the index position of the right answer
@@ -300,7 +301,6 @@ class QuizAlgebra:
       self.ac4.config(text=algebra_questions_answers[algebra_qnum][4])
 
     #This is the confirm button method that will take care of the quiz progress and will check if the answer choice the user picked is right or wrong
-    global score
     def algebra_test_progress(self):
       score=0
       score_label = self.score_label
@@ -316,13 +316,15 @@ class QuizAlgebra:
           score_label.configure(text="The correct answer was: " + algebra_questions_answers[algebra_qnum][6])
           self.confirm_button.configure(text = "Confirm")
           self.algebra_questions_setup()
+          
       else:
         if choice == 0:
-          self.score_label.configure(text = "You have no selected an option.")
+          self.score_label.configure(text = "You have not selected an option.")
           choice = self.var1.get()
+          self.algebra_questions_setup()
         else:
           score+=0
-          score_label.configure(text= "The correct answer was: " + algebra_questions_answers[algebra_qnum][6])
+          score_label.configure(text = "The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
           self.confirm_button.configure(text="Confirm")
           self.algebra_questions_setup()
           
