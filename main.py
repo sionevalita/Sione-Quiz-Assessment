@@ -294,7 +294,7 @@ class QuizAlgebra:
     #Method to randomise question label and radio buttons 
     def algebra_questions_setup(self):
       algebra_randomiser()
-      self.var1 = 0
+      self.var1.set(0)
       self.question_label.config(text=algebra_questions_answers[algebra_qnum][0])
       self.ac1.config(text=algebra_questions_answers[algebra_qnum][1])
       self.ac2.config(text=algebra_questions_answers[algebra_qnum][2])
@@ -310,40 +310,30 @@ class QuizAlgebra:
         if choice == algebra_questions_answers[algebra_qnum][6]:
           score+=1
           score_label.configure(text=score)
-          self.confirm_button.configure(text="Confirm")
-          self.algebra_questions_setup()
+          self.confirm_button.config(text="Confirm")
+          #self.algebra_questions_setup()
         else:
           score+=0
           score_label.configure(text="The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
-          self.confirm_button.configure(text = "Confirm")
-          self.algebra_questions_setup()
+          self.confirm_button.config(text = "Confirm")
+          #self.algebra_questions_setup()
           
       else:
         if choice == 0:
-          self.score_label.configure(text = "You have not selected an option.")
+          score_label.configure(text = "You have not selected an option.")
           choice = self.var1.get()
-          self.algebra_questions_setup()
-        else:
-          score+=0
-          score_label.configure(text = "The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
-          self.confirm_button.configure(text="Confirm")
-          self.algebra_questions_setup()
+        else:#if choice is made
+          if choice == algebra_questions_answers[algebra_qnum][6]: 
+                    score+=1
+                    score_label.configure(text=score) 
+                    self.confirm_button.config(text="Confirm")
+                    self.algebra_questions_setup()
+          else:
+            score+=0
+            score_label.configure(text = "The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
+            self.confirm_button.configure(text="Confirm")
+            self.algebra_questions_setup()
           
-      
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
 
 class QuizTrig:
     def __init__(self,master):
@@ -389,14 +379,6 @@ class QuizTrig:
       self.ac2.config(text=trigonometry_questions_answers[trig_qnum][2])
       self.ac3.config(text=trigonometry_questions_answers[trig_qnum][3])
       self.ac4.config(text=trigonometry_questions_answers[trig_qnum][4])
-
-
-
-
-
-
-
-
 
 
 
