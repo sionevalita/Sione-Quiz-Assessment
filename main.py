@@ -92,6 +92,7 @@ trigonometry_questions_answers={
 1],#index 6 item 7 will be the index position of the right answer
 }
 
+
 calculus_questions_answers={
 1:["Based on Degree two function: ? x (? f) = ?",
 '0',
@@ -411,7 +412,7 @@ class QuizTrig:
             score+=0
             score_label.configure(text = "The correct answer was: " + trigonometry_questions_answers[trig_qnum][5])
             self.confirm_button.configure(text="Confirm")
-            self.algebra_questions_setup()
+            self.trig_questions_setup()
 
 
 
