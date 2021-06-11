@@ -335,6 +335,8 @@ class QuizAlgebra:
             self.algebra_questions_setup()
           
 
+
+
 class QuizTrig:
     def __init__(self,master):
         background_color = "#b7d7bf"
@@ -364,7 +366,7 @@ class QuizTrig:
         self.ac3.grid(row=3)
 
         #radio button 4
-        self.ac4= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[algebra_qnum][4], font=("Tw Cent Mt", "18", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
+        self.ac4= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][4], font=("Tw Cent Mt", "18", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
         self.ac4.grid(row=4)
 
         #confirm Button
@@ -380,6 +382,36 @@ class QuizTrig:
       self.ac3.config(text=trigonometry_questions_answers[trig_qnum][3])
       self.ac4.config(text=trigonometry_questions_answers[trig_qnum][4])
 
+    #This is the confirm button method that will take care of the quiz progress and will check if the answer choice the user picked is right or wrong
+    def trig_test_progress(self):
+      score=0
+      score_label = self.score_label
+      choice = self.var1.get()
+      if len(asked_trig)>4:
+        if choice == trigonometry_questions_answers[trig_qnum][6]:
+          score+=1
+          score_label.configure(text=score)
+          self.confirm_button.config(text="Confirm")
+        else:
+          score+=0
+          score_label.configure(text="The correct answer was: " + trigonometry_questions_answers[trig_qnum][5])
+          self.confirm_button.config(text = "Confirm")
+          
+      else:
+        if choice == 0:
+          score_label.configure(text = "You have not selected an option.")
+          choice = self.var1.get()
+        else:#if choice is made
+          if choice == trigonometry_questions_answers[trig_qnum][6]: 
+                    score+=1
+                    score_label.configure(text=score) 
+                    self.confirm_button.config(text="Confirm")
+                    self.trig_questions_setup()
+          else:
+            score+=0
+            score_label.configure(text = "The correct answer was: " + trigonometry_questions_answers[trig_qnum][5])
+            self.confirm_button.configure(text="Confirm")
+            self.algebra_questions_setup()
 
 
 
