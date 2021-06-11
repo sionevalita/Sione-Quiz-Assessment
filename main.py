@@ -46,7 +46,7 @@ algebra_questions_answers ={
   'no possible answer',
   'y=6',
   'y=8',
-  'y=3',
+  'y=6',
   3]#index 6 will be the index position of the right answer
 }
 
@@ -249,6 +249,7 @@ class QuizPicker:
 
 
 
+
 class QuizAlgebra:
     def __init__(self, master):
         background_color="#b7d7bf"
@@ -293,7 +294,7 @@ class QuizAlgebra:
     #Method to randomise question label and radio buttons 
     def algebra_questions_setup(self):
       algebra_randomiser()
-      self.var(0)
+      self.var1 = 0
       self.question_label.config(text=algebra_questions_answers[algebra_qnum][0])
       self.ac1.config(text=algebra_questions_answers[algebra_qnum][1])
       self.ac2.config(text=algebra_questions_answers[algebra_qnum][2])
@@ -313,7 +314,7 @@ class QuizAlgebra:
           self.algebra_questions_setup()
         else:
           score+=0
-          score_label.configure(text="The correct answer was: " + algebra_questions_answers[algebra_qnum][6])
+          score_label.configure(text="The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
           self.confirm_button.configure(text = "Confirm")
           self.algebra_questions_setup()
           
