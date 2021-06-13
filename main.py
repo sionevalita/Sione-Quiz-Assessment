@@ -371,7 +371,7 @@ class QuizTrig:
         self.ac4.grid(row=4)
 
         #confirm Button
-        self.confirm_button = Button(self.quiz_frame, text="Confirm")
+        self.confirm_button = Button(self.quiz_frame, text="Confirm",command=self.trig_test_progress)
         self.confirm_button.grid(row=5)
 
     #Method that will setup questions and answer choices when continue button is pressed
