@@ -457,8 +457,12 @@ class QuizCalculus:
         self.ac4.grid(row=4)
 
         #confirm Button
-        self.confirm_button = Button(self.quiz_frame, text="Confirm")
+        self.confirm_button = Button(self.quiz_frame, text="Confirm",command=self.calculus_test_progress)
         self.confirm_button.grid(row=5)
+
+        #score Label
+        self.score_label = Label(self.quiz_frame, text="Confirm", bg=background_color)
+        self.score_label.grid(row=6, pady=10)
 
         #Method that will setup questions and answer choices when continue button is pressed
   def calculus_questions_setup(self):
@@ -468,6 +472,39 @@ class QuizCalculus:
       self.ac2.config(text=calculus_questions_answers[calculus_qnum][2])
       self.ac3.config(text=calculus_questions_answers[calculus_qnum][3])
       self.ac4.config(text=calculus_questions_answers[calculus_qnum][4])
+
+    #This is the confirm button method that will take care of the quiz progress and will check if the answer choice the user picked is right or wrong
+      def calculus_test_progress(self):
+        score=0
+        score_label = self.score_label
+        choice = self.var1.get()
+        if len(asked_calculus)>4:
+          if choice == calculus_questions_answers[calculus_qnum][6]:
+            score+=1
+            score_label.configure(text=score)
+            self.confirm_button.config(text="Confirm")
+          else:
+            score+=0
+            score_label.configure(text="The correct answer was: " + calculus_questions_answers[calculus_qnum][5])
+            self.confirm_button.config(text = "Confirm")
+            
+        else:
+          if choice == 0:
+            score_label.configure(text = "You have not selected an option.")
+            choice = self.var1.get()
+          else:#if choice is made
+            if choice == calculus_questions_answers[calculus_qnum][6]: 
+                      score+=1
+                      score_label.configure(text=score) 
+                      self.confirm_button.config(text="Confirm")
+                      self.calculus_questions_setup()
+            else:
+              score+=0
+              score_label.configure(text = "The correct answer was: " + calculus_questions_answers[calculus_qnum][5])
+              self.confirm_button.configure(text="Confirm")
+              self.calculus_questions_setup()
+
+      
 
 
 
