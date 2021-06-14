@@ -374,6 +374,10 @@ class QuizTrig:
         self.confirm_button = Button(self.quiz_frame, text="Confirm",command=self.trig_test_progress)
         self.confirm_button.grid(row=5)
 
+        #score label
+        self.score_label = Label(self.quiz_frame, text="SCORE", bg=background_color)
+        self.score_label.grid(row=6, pady=10)
+
     #Method that will setup questions and answer choices when continue button is pressed
     def trig_questions_setup(self):
       trig_randomiser()
