@@ -84,7 +84,7 @@ trigonometry_questions_answers={
 'Opposite = 30 x cos90 = 0cm',
 1],#index 6 item 7 will be the index position of the right answer
 
-5:["The side next to the angle is ________ and the side opposite to the angle is ________",'hypotenuse and opposite',
+5:["The side next to the angle is the ________ and the side opposite to the angle is ________",'hypotenuse and opposite',
 'adjacent and opposite',
 'opposite and hypotenuse',
 'opposite and opposite',
@@ -355,19 +355,19 @@ class QuizTrig:
         self.var1=IntVar()
 
         #radio button 1
-        self.ac1= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][1], font=("Tw Cent Mt", "18", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
+        self.ac1= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][1], font=("Tw Cent Mt", "11", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
         self.ac1.grid(row=1)
 
         #radio button 2
-        self.ac2= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][2], font=("Tw Cent Mt", "18", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
+        self.ac2= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][2], font=("Tw Cent Mt", "11", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
         self.ac2.grid(row=2)
 
         #radio button 3
-        self.ac3= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][3], font=("Tw Cent Mt", "18", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
+        self.ac3= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][3], font=("Tw Cent Mt", "11", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
         self.ac3.grid(row=3)
 
         #radio button 4
-        self.ac4= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][4], font=("Tw Cent Mt", "18", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
+        self.ac4= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][4], font=("Tw Cent Mt", "11", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
         self.ac4.grid(row=4)
 
         #confirm Button
@@ -441,27 +441,27 @@ class QuizCalculus:
         self.var1=IntVar()
 
         #radio button 1
-        self.ac1= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][1], font=("Tw Cent Mt", "18", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
+        self.ac1= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][1], font=("Tw Cent Mt", "11", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
         self.ac1.grid(row=1)
 
         #radio button 2
-        self.ac2= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][2], font=("Tw Cent Mt", "18", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
+        self.ac2= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][2], font=("Tw Cent Mt", "11", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
         self.ac2.grid(row=2)
 
         #radio button 3
-        self.ac3= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][3], font=("Tw Cent Mt", "18", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
+        self.ac3= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][3], font=("Tw Cent Mt", "11", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
         self.ac3.grid(row=3)
 
         #radio button 4
-        self.ac4= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][4], font=("Tw Cent Mt", "18", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
+        self.ac4= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][4], font=("Tw Cent Mt", "11", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
         self.ac4.grid(row=4)
 
         #confirm Button
-        self.confirm_button = Button(self.quiz_frame, text="Confirm",command=self.calculus_test_progress)
+        self.confirm_button = Button(self.quiz_frame, text="Confirm",command = self.calculus_test_progress)
         self.confirm_button.grid(row=5)
 
         #score Label
-        self.score_label = Label(self.quiz_frame, text="Confirm", bg=background_color)
+        self.score_label = Label(self.quiz_frame, text="SCORE", bg=background_color)
         self.score_label.grid(row=6, pady=10)
 
         #Method that will setup questions and answer choices when continue button is pressed
@@ -474,7 +474,7 @@ class QuizCalculus:
       self.ac4.config(text=calculus_questions_answers[calculus_qnum][4])
 
     #This is the confirm button method that will take care of the quiz progress and will check if the answer choice the user picked is right or wrong
-      def calculus_test_progress(self):
+  def calculus_test_progress(self):
         score=0
         score_label = self.score_label
         choice = self.var1.get()
