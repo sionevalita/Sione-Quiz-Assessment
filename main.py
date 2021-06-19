@@ -338,13 +338,13 @@ class QuizAlgebra:
           score+=1
           score_label.configure(text=score)
           self.confirm_button.config(text="Confirm")
-          self.algebra_end()
+          self.AlgebraEnd_Screen()
 
         else:
           score+=0
           score_label.configure(text="The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
           self.confirm_button.config(text = "Confirm")
-          self.algebra_end()
+          self.AlgebraEnd_Screen()
           
       else:
         if choice == 0:
