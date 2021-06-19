@@ -364,7 +364,7 @@ class QuizAlgebra:
 
     def AlgebraEnd_Screen(self):
       root.withdraw()
-      open_endscrn = End()
+      open_endscrn = AlgebraEnd()
 
 
 class AlgebraEnd:
