@@ -50,102 +50,103 @@ algebra_questions_answers ={
   'BEDMAS',#index 5, item 6 will be the right answer
   2],#index 6, item 7 will show the index position of the right answer
 
-  5:["Solve for y: 3y=18",
-  'y=2',
-  'no possible answer',
-  'y=6',
-  'y=8',
-  'y=6',
-  3]#index 6 will be the index position of the right answer
+  5:["Solve for y: 3y=18",#index 0, item 1 will be the question
+  'y=2',#index 1, item 2 will be the first answer choice
+  'no possible answer',#index 2, item 3 will be the second answer choice
+  'y=6',#index 3, item 4 will be the third answer choice
+  'y=8',#index 4, item 5 will be the fourth answer choice
+  'y=6',#index 5, item 6 will be the right answer
+  3]#index 6, item 7 will show the index position of the right answer
 }
 
 
 #dictionary for trigonometry questions and answers
 trigonometry_questions_answers={
-1:["What is a more efficient way of remembering the trigonometry functions?",
-'Google it',
-'S0H CUT T0@',
-'SOH CAH TOA',
-'BEDMAS',
-'SOH CAH TOA',
+1:["What is a more efficient way of remembering the trigonometry functions?",#index 0, item 1 will be the question
+'Google it',#index 1, item 2 will be the first answer choice
+'S0H CUT T0@',#index 2, item 3 will be the second answer choice
+'SOH CAH TOA',#index 3, item 4 will be the third answer choice
+'BEDMAS',#index 4, item 5 will be the fourth answer choice
+'SOH CAH TOA',#index 5, item 6 will be the right answer
 3],#index 6 will be the index position of the right algebra_questions_answers
 
-2:["What is the longest side of a triangle called?",
-'hypotenuse',
-'adjacent',
-'the longest side',
-'opposite',
-'hypotenuse',
+2:["What is the longest side of a triangle called?",#index 0, item 1 will be the question
+'hypotenuse',#index 1, item 2 will be the first answer choice
+'adjacent',#index 2, item 3 will be the second answer choice
+'the longest side',#index 3, item 4 will be the third answer choice
+'opposite',#index 4, item 5 will be the fourth answer choice
+'hypotenuse',#index 5, item 6 will be the right answer
 1],#index 6 will be the index position of the right algebra_questions_answers
 
-3:["What does the theta symbol Ø mean?",
-'A zero',
-'Angle of the triangle',
-'It means nothing',
-'The tallest point in a triangle',
-'Angle of the triangle',
+3:["What does the theta symbol Ø mean?",#index 0, item 1 will be the question
+'A zero',#index 1, item 2 will be the first answer choice
+'Angle of the triangle',#index 2, item 3 will be the second answer choice
+'It means nothing',#index 3, item 4 will be the third answer choice
+'The tallest point in a triangle',#index 4, item 5 will be the fourth answer choice
+'Angle of the triangle',#index 5, item 6 will be the right answer
 2],#index 6 item 7 is the index position of the right answer
 
-4:["If the angle of a triangle is 90° and the hypotenuse is 30cm, how do you calculate opposite and how long is it??",
-'Opposite = 30 x cos90 = 0cm',
-'Opposite = 90 x tan30 = 51.96cm',
-'Opposite = 60cm because I said so',
-'Opposite = 30 x sin90= 30cm',
-'Opposite = 30 x cos90 = 0cm',
+4:["If the angle of a triangle is 90° and the hypotenuse is 30cm, how do you calculate opposite and how long is it??",#index 0, item 1 will be the question
+'Opposite = 30 x cos90 = 0cm',#index 1, item 2 will be the first answer choice
+'Opposite = 90 x tan30 = 51.96cm',#index 2, item 3 will be the second answer choice
+'Opposite = 60cm because I said so',#index 3, item 4 will be the third answer choice
+'Opposite = 30 x sin90= 30cm',#index 4, item 5 will be the fourth answer choice
+'Opposite = 30 x cos90 = 0cm',#index 5, item 6 will be the right answer
 1],#index 6 item 7 will be the index position of the right answer
 
-5:["The side next to the angle is the ________ and the side opposite to the angle is ________",'hypotenuse and opposite',
-'adjacent and opposite',
-'opposite and hypotenuse',
-'opposite and opposite',
-'adjacent and opposite',
+5:["The side next to the angle is the ________ and the side opposite to the angle is ________",'hypotenuse and opposite',#index 0, item 1 will be the question
+'adjacent and opposite',#index 1, item 2 will be the first answer choice
+'opposite and hypotenuse',#index 2, item 3 will be the second answer choice
+'opposite and opposite',#index 3, item 4 will be the third answer choice
+'opposite and opposite',#index 4, item 5 will be the fourth answer choice
+'adjacent and opposite',#index 5, item 6 will be the right answer
 1],#index 6 item 7 will be the index position of the right answer
 }
 
 
 calculus_questions_answers={
-1:["Based on Degree two function: ? x (? f) = ?",
-'0',
-'1',
-'-1',
-'None of these',
-'0',
+1:["Based on Degree two function: ? x (? f) = ?",#index 0, item 1 will be the question
+'0',#index 1, item 2 will be the first answer choice
+'1',#index 2, item 3 will be the second answer choice
+'-1',#index 3, item 4 will be the third answer choice
+'None of these',#index 4, item 5 will be the fourth answer choice
+'0',#index 5, item 6 will be the right answer
 1],#index 6 item 7 will be the index position of the right answer
 
-2:["Onto function is also called",
-'Injective function',
-'Surjective function',
-'Bijective function',
-'None of these',
-'Surjective function',
+2:["Onto function is also called",#index 0, item 1 will be the question
+'Injective function',#index 1, item 2 will be the first answer choice
+'Surjective function',#index 2, item 3 will be the second answer choice
+'Bijective function',#index 3, item 4 will be the third answer choice
+'None of these',#index 4, item 5 will be the fourth answer choice
+'Surjective function',#index 5, item 6 will be the right answer
 2],#index 6 item 7 will be the index position of the right answer
 
-3:["An ordered pair is represented by",
-'(Output, Output)',
-'(Input, Input)',
-'(Output, Input)',
-'(Input, Output)',
-'(Input, Output)',
+3:["An ordered pair is represented by",#index 0, item 1 will be the question
+'(Output, Output)',#index 1, item 2 will be the first answer choice
+'(Input, Input)',#index 2, item 3 will be the second answer choice
+'(Output, Input)',#index 3, item 4 will be the third answer choice
+'(Input, Output)',#index 4, item 5 will be the fourth answer choice
+'(Input, Output)',#index 5, item 6 will be the right answer
 4],#index 6 item 7 will be the index position of the right answer
 
-4:["Bijective function is also called as",
-'One to one function',
-'Many to one function',
-'Onto Function',
-'One-one correspondence',
-'One-one correspondence',
+4:["Bijective function is also called as",#index 0, item 1 will be the question
+'One to one function',#index 1, item 2 will be the first answer choice
+'Many to one function',#index 2, item 3 will be the second answer choice
+'Onto Function',#index 3, item 4 will be the third answer choice
+'One-one correspondence',#index 4, item 5 will be the fourth answer choice
+'One-one correspondence',#index 5, item 6 will be the right answer
 4],#index 6 item 7 will be the index position of the right answer
 
-5:["If (a, b) ∈ R then (b, a) ∈ R, for all a & b ∈ A, then a relation R on a set A is",
-'Inverse Relation',
-'Reflexive Relation',
-'Symmetric Relation',
-'Transitive Relation',
-'Symmetric Relation',
+5:["If (a, b) ∈ R then (b, a) ∈ R, for all a & b ∈ A, then a relation R on a set A is",#index 0, item 1 will be the question
+'Inverse Relation',#index 1, item 2 will be the first answer choice
+'Reflexive Relation',#index 2, item 3 will be the second answer choice
+'Symmetric Relation',#index 3, item 4 will be the third answer choice
+'Transitive Relation',#index 4, item 5 will be the fourth answer choice
+'Symmetric Relation',#index 5, item 6 will be the right answer
 3],#index 6 item 7 will be the index position of the right answer
 }
 
-#randomiser for algebra that wil randomise the algebra questions
+#randomiser for algebra that wil randomise the algebra questions and answer choices
 def algebra_randomiser():
   global algebra_qnum
   algebra_qnum = random.randint(1,5)
@@ -154,7 +155,7 @@ def algebra_randomiser():
   elif algebra_qnum in asked_algebra:
     algebra_randomiser()
 
-#randomiser for trigonometry that will randomise the trigonometry questions
+#randomiser for trigonometry that will randomise the trigonometry questions and answer choices
 def trig_randomiser():
   global trig_qnum
   trig_qnum = random.randint(1,5)
@@ -163,7 +164,7 @@ def trig_randomiser():
   elif trig_qnum in asked_trig:
     trig_randomiser() 
 
-#randomiser for calculus that will randomise the calculus questions
+#randomiser for calculus that will randomise the calculus questions and answer choices
 def calculus_randomiser():
   global calculus_qnum
   calculus_qnum = random.randint(1,5)
@@ -173,7 +174,7 @@ def calculus_randomiser():
     calculus_randomiser()
   
 
-#Starting page
+#Starting page of the quiz
 class QuizStarter:
     def __init__(self, master):
         background_color="#b7d7bf"
@@ -215,15 +216,15 @@ class QuizStarter:
     #command for continue button
     def name_collection(self):
       name = self.entry_box.get()
-      if name.strip() !="" and len(name) < 16:
+      if name.strip() !="" and len(name) < 16:#if the name is less than 16 characters then the user will proceed
           names_list.append(name)
           print(names_list)
           self.quiz_frame.destroy()
           QuizPicker(root)
-
+      #check to see if name is more than 16 characters
       elif len(name) > 16:
           self.user_label.config(text="Name must be less than 16 characters")
-          
+      #check to see if the user left the name entry box empty    
       elif len(name) ==0:
           self.user_label.config(text="You cannot leave entry box")
         
@@ -334,12 +335,14 @@ class QuizAlgebra:
       score_label = self.score_label
       choice = self.var1.get()
       if len(asked_algebra)>4:
+        #if user picked the right answer
         if choice == algebra_questions_answers[algebra_qnum][6]:
           score+=1
           score_label.configure(text=score)
           self.confirm_button.config(text="Confirm")
           self.AlgebraEnd_Screen()
 
+        #if user picked the wrong answer
         else:
           score+=0
           score_label.configure(text="The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
@@ -347,7 +350,7 @@ class QuizAlgebra:
           self.AlgebraEnd_Screen()
           
       else:
-        if choice == 0:
+        if choice == 0:#if user didn't pick an option
           score_label.configure(text = "You have not selected an option.")
           choice = self.var1.get()
         else:#if choice is made
@@ -356,35 +359,42 @@ class QuizAlgebra:
                     score_label.configure(text=score) 
                     self.confirm_button.config(text="Confirm")
                     self.algebra_questions_setup()
+
+          #if user picked the worng answer
           else:
             score+=0
             score_label.configure(text = "The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
             self.confirm_button.configure(text="Confirm")
             self.algebra_questions_setup()
 
+    #Algebra end screen function
     def AlgebraEnd_Screen(self):
-      root.withdraw()
-      open_endscrn = AlgebraEnd()
+      root.withdraw()#hides the root window 
+      open_endscreen = AlgebraEnd()
 
 
+#End screen class for algebra quiz
 class AlgebraEnd:
   def __init__(self):
-    background_color = "#b7d7bf"
-    self.end_box = Toplevel(root)
+    background_color = "#b7d7bf"#background colour is reclining green
+    self.end_box = Toplevel(root)#Create a window on top of the root window
     self.end_box.title("End Box")
 
+    #frame set up for end box
     self.end_frame = Frame(self.end_box, padx=100, pady=100, bg=background_color)
     self.end_frame.grid(row=0)
 
+    #Label that will congratualte the user
     self.end_heading = Label(self.end_frame, text="Well Done", pady=15, bg=background_color)
     self.end_heading.grid(row=0)
 
+    #exit button
     self.exit_button = Button(self.end_frame, text="Exit", width=10, command = self.close_algebra, bg="red")
     self.exit_button.grid(row=4, pady=40)
 
-  def close_algebra(self):
-    self.end_box.destroy()
-    root.withdraw()
+  def close_algebra(self):#function for the exi tbtton in the end screen
+    self.end_box.destroy()#destroys end box
+    root.withdraw()#hides the root window
 
           
 
@@ -473,34 +483,38 @@ class QuizTrig:
             self.trig_questions_setup()
 
     def TrigEnd_Screen(self):
-      root.withdraw()
-      open_endscrn = TrigEnd()
+      root.withdraw()#hides the root window
+      open_endscreen = TrigEnd()
 
-
+#End screen class for trig quiz
 class TrigEnd:
     def __init__(self):
       background_color = "#b7d7bf"
-      self.end_box = Toplevel(root)
+      self.end_box = Toplevel(root)#creates another window on top of the root window
       self.end_box.title("End Box")
 
+      #heading label that will congratulat the user
       self.end_frame = Frame(self.end_box, padx=100, pady=100, bg=background_color)
       self.end_frame.grid(row=0)
 
+      #heading label that will congratulate the user
       self.end_heading = Label(self.end_frame, text="Well Done", pady=15, bg=background_color)
       self.end_heading.grid(row=0)
 
+      #exit button
       self.exit_button = Button(self.end_frame, text="Exit", width=10, command = self.close_trig, bg="red")
       self.exit_button.grid(row=4, pady=40)
 
+    #function for exit button in TrigEnd
     def close_trig(self):
-      self.end_box.destroy()
-      root.withdraw()
+      self.end_box.destroy()#destroys the end box
+      root.withdraw()#hides the root window without destroying it
 
 
 
 
 
-
+#Calculus quiz class
 class QuizCalculus:
   def __init__(self, master):
         background_color="#b7d7bf"
@@ -557,45 +571,65 @@ class QuizCalculus:
         score_label = self.score_label
         choice = self.var1.get()
         if len(asked_calculus)>4:
+          #if user gets the question right
           if choice == calculus_questions_answers[calculus_qnum][6]:
             score+=1
             score_label.configure(text=score)
             self.confirm_button.config(text="Confirm")
+            self.CalculusEnd_Screen()
           else:
+            #if user gets the question wrong
             score+=0
             score_label.configure(text="The correct answer was: " + calculus_questions_answers[calculus_qnum][5])
             self.confirm_button.config(text = "Confirm")
+            self.CalculusEnd_Screen()
             
         else:
           if choice == 0:
             score_label.configure(text = "You have not selected an option.")
             choice = self.var1.get()
           else:#if choice is made
-            if choice == calculus_questions_answers[calculus_qnum][6]: 
+            if choice == calculus_questions_answers[calculus_qnum][6]: #if user gets the question right
                       score+=1
                       score_label.configure(text=score) 
                       self.confirm_button.config(text="Confirm")
                       self.calculus_questions_setup()
             else:
               score+=0
+              #if user gets the qestion wrong
               score_label.configure(text = "The correct answer was: " + calculus_questions_answers[calculus_qnum][5])
               self.confirm_button.configure(text="Confirm")
               self.calculus_questions_setup()
 
-      
+  def CalculusEnd_Screen(self):
+    root.withdraw()#hides the root window 
+    open_endscreen = CalculusEnd()#
 
 
 
+#End screen class for calculus quiz
+class CalculusEnd:
+    def __init__(self):
+      background_color = "#b7d7bf"
+      self.end_box = Toplevel(root)
+      self.end_box.title("End Box")
 
+      #frmae setup for end box
+      self.end_frame = Frame(self.end_box, padx=100, pady=100, bg=background_color)
+      self.end_frame.grid(row=0)
 
+      #heading label that will congratulate the user 
+      self.end_heading = Label(self.end_frame, text="Well Done", pady=15, bg=background_color)
+      self.end_heading.grid(row=0)
 
+      #exit button
+      self.exit_button = Button(self.end_frame, text="Exit", width=10, command = self.close_calculus, bg="red")
+      self.exit_button.grid(row=4, pady=40)
 
-
-
-
-
-
-
+    #function for exit button in CalculusEnd class
+    def close_calculus(self):
+      self.end_box.destroy()#destroys the end box
+      root.withdraw()#hides the root window     
 
 
 
