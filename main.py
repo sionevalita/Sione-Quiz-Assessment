@@ -3,43 +3,52 @@ import random
 from PIL import ImageTk, Image
 global score
 
+#list that the user's name will be stored in
 names_list=[]
+
+#list that all the asked algebra questions will be stored in
 asked_algebra=[]
+
+#list that all the asked trigonometry questions will be stored in
 asked_trig=[]
+
+#list that all the asked calculus questions will be stored in
 asked_calculus=[]
 
+
+#dictionary that stores the questions and answer for algebra questions and answers
 algebra_questions_answers ={
-  1:["What does a linear graph look like?",
-  'A donut',
-  'A straight line',
-  'A long curve',
-  'Squilliams forehead wrinkles',
-  'A straight line',
-  2], #index 6 will show the index position of the right answer
+  1:["What does a linear graph look like?",#index 0, item 1 will be the question
+  'A donut',#index 1, item 2 will be the first answer choice
+  'A straight line',#index 2, item 3 will be the second answer choice
+  'A long curve',#index 3, item 4 will be the third answer choice
+  'Squilliams forehead wrinkles',#index 4, item 5 will be the fourth answer choice
+  'A straight line',#index 5, item 6 will be the right answer
+  2], #index 6, item 7 will show the index position of the right answer
 
-  2:["What shape is a parabolic graph?",
-  'A straight line',
-  'A circle',
-  'A curve',
-  'Godzilla',
-  'A curve',
-  3],#index 6 will show the index position of the right answer
+  2:["What shape is a parabolic graph?",#index 0, item 1 will be the question
+  'A straight line',#index 1, item 2 will be the first answer choice
+  'A circle',#index 2, item 3 will be the second answer choice
+  'A curve',#index 3, item 4 will be the third answer choice
+  'Godzilla',#index 4, item 5 will be the fourth answer choice
+  'A curve',#index 5, item 6 will be the right answer
+  3],#index 6, item 7 will show the index position of the right answer
 
-  3:["12=3x, To solve for x what do you do?",
-  'multiply x by 3',
-  'divide 3 to both sides',
-  'divide 3 to just 3x',
-  'run around the street',
-  'divide 3 to both sides',
-  2],#index 6 will be the index position of the right algebra_questions_answers
+  3:["12=3x, To solve for x what do you do?",#index 0, item 1 will be the question
+  'multiply x by 3',#index 1, item 2 will be the first answer choice
+  'divide 3 to both sides',#index 2, item 3 will be the second answer choice
+  'divide 3 to just 3x',#index 3, item 4 will be the third answer choice
+  'run around the street',#index 4, item 5 will be the fourth answer choice
+  'divide 3 to both sides',#index 5, item 6 will be the right answer
+  2],#index 6, item 7 will show the index position of the right answer
 
-  4:["When solving for a variable in an equation, what do you use?",
-  'A car',
-  'BEDMAS',
-  'Trigonometry',
-  'Statistics',
-  'BEDMAS',
-  2],#index 6 will be the index position of the right algebra_questions_answers
+  4:["When solving for a variable in an equation, what do you use?",#index 0, item 1 will be the question
+  'A car',#index 1, item 2 will be the first answer choice
+  'BEDMAS',#index 2, item 3 will be the second answer choice
+  'Trigonometry',#index 3, item 4 will be the third answer choice
+  'Statistics',#index 4, item 5 will be the fourth answer choice
+  'BEDMAS',#index 5, item 6 will be the right answer
+  2],#index 6, item 7 will show the index position of the right answer
 
   5:["Solve for y: 3y=18",
   'y=2',
@@ -51,6 +60,7 @@ algebra_questions_answers ={
 }
 
 
+#dictionary for trigonometry questions and answers
 trigonometry_questions_answers={
 1:["What is a more efficient way of remembering the trigonometry functions?",
 'Google it',
@@ -135,6 +145,7 @@ calculus_questions_answers={
 3],#index 6 item 7 will be the index position of the right answer
 }
 
+#randomiser for algebra that wil randomise the algebra questions
 def algebra_randomiser():
   global algebra_qnum
   algebra_qnum = random.randint(1,5)
@@ -143,6 +154,7 @@ def algebra_randomiser():
   elif algebra_qnum in asked_algebra:
     algebra_randomiser()
 
+#randomiser for trigonometry that will randomise the trigonometry questions
 def trig_randomiser():
   global trig_qnum
   trig_qnum = random.randint(1,5)
@@ -151,6 +163,7 @@ def trig_randomiser():
   elif trig_qnum in asked_trig:
     trig_randomiser() 
 
+#randomiser for calculus that will randomise the calculus questions
 def calculus_randomiser():
   global calculus_qnum
   calculus_qnum = random.randint(1,5)
@@ -160,7 +173,7 @@ def calculus_randomiser():
     calculus_randomiser()
   
 
-
+#Starting page
 class QuizStarter:
     def __init__(self, master):
         background_color="#b7d7bf"
@@ -201,11 +214,19 @@ class QuizStarter:
 
     #command for continue button
     def name_collection(self):
-       name = self.entry_box.get()
-       names_list.append(name)
-       print(names_list)
-       self.quiz_frame.destroy()
-       QuizPicker(root)
+      name = self.entry_box.get()
+      if name.strip() !="" and len(name) < 16:
+          names_list.append(name)
+          print(names_list)
+          self.quiz_frame.destroy()
+          QuizPicker(root)
+
+      elif len(name) > 16:
+          self.user_label.config(text="Name must be less than 16 characters")
+          
+      elif len(name) ==0:
+          self.user_label.config(text="You cannot leave entry box")
+        
     
     #command for exit button
     def quiz_exit(self):
@@ -213,23 +234,27 @@ class QuizStarter:
 
 
 
-#page where user will pick which topic they want to learn
+#Page where the user will pick which math topic they want to do
 class QuizPicker:
     def __init__(self, master):
         background_color="#b7d7bf"
         #frame setup
         self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
         self.quiz_frame.grid()
-
+        
+        #Label that wil ask the user what math topic they want to learn about
         self.heading_label=Label(self.quiz_frame, text="Hello " + names_list[0] + ", what topic do you want to learn about?",font=("Tw Cent Mt", "14", "bold"))
         self.heading_label.grid(row=1)
 
+        #algebra button
         self.algebra_button = Button(self.quiz_frame, text="Algebra(Level 1)", command=self.quiz_algebra)
         self.algebra_button.grid(row= 2)
 
+        #trigonometry button
         self.trigonometry_button = Button(self.quiz_frame, text="Trigonometry", command=self.quiz_trig)
         self.trigonometry_button.grid(row=3)
 
+        #calculus button
         self.calculus_button = Button(self.quiz_frame, text="Calculus", command = self.Quiz_calculus)
         self.calculus_button.grid(row=4)
 
@@ -250,7 +275,7 @@ class QuizPicker:
 
 
 
-
+#Algebra quiz
 class QuizAlgebra:
     def __init__(self, master):
         background_color="#b7d7bf"
@@ -302,6 +327,7 @@ class QuizAlgebra:
       self.ac3.config(text=algebra_questions_answers[algebra_qnum][3])
       self.ac4.config(text=algebra_questions_answers[algebra_qnum][4])
 
+
     #This is the confirm button method that will take care of the quiz progress and will check if the answer choice the user picked is right or wrong
     def algebra_test_progress(self):
       score=0
@@ -312,12 +338,11 @@ class QuizAlgebra:
           score+=1
           score_label.configure(text=score)
           self.confirm_button.config(text="Confirm")
-          #self.algebra_questions_setup()
+
         else:
           score+=0
           score_label.configure(text="The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
           self.confirm_button.config(text = "Confirm")
-          #self.algebra_questions_setup()
           
       else:
         if choice == 0:
@@ -334,10 +359,25 @@ class QuizAlgebra:
             score_label.configure(text = "The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
             self.confirm_button.configure(text="Confirm")
             self.algebra_questions_setup()
+
+    def AlgebraEnd_Screen(self):
+      root.withdraw()
+      open_endscrn = End()
+
+class AlgebraEnd:
+  def __init__(self):
+    background_color = "#b7d7bf"
+    self.end_box = Toplevel(root)
+    self.end_box.title("End Box")
+
+    
+
+
+
           
 
 
-
+#Trigonometry Quiz
 class QuizTrig:
     def __init__(self,master):
         background_color = "#b7d7bf"
@@ -417,6 +457,7 @@ class QuizTrig:
             score_label.configure(text = "The correct answer was: " + trigonometry_questions_answers[trig_qnum][5])
             self.confirm_button.configure(text="Confirm")
             self.trig_questions_setup()
+
 
 
 
