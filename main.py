@@ -338,11 +338,13 @@ class QuizAlgebra:
           score+=1
           score_label.configure(text=score)
           self.confirm_button.config(text="Confirm")
+          self.algebra_end()
 
         else:
           score+=0
           score_label.configure(text="The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
           self.confirm_button.config(text = "Confirm")
+          self.algebra_end()
           
       else:
         if choice == 0:
@@ -364,15 +366,25 @@ class QuizAlgebra:
       root.withdraw()
       open_endscrn = End()
 
+
 class AlgebraEnd:
   def __init__(self):
     background_color = "#b7d7bf"
     self.end_box = Toplevel(root)
     self.end_box.title("End Box")
 
-    
+    self.end_frame = Frame(self.end_box, padx=100, pady=100, bg=background_color)
+    self.end_frame.grid(row=0)
 
+    self.end_heading = Label(self.end_frame, text="Well Done", pady=15)
+    self.end_heading.grid(row=0)
 
+    self.exit_button = Button(self.end_frame, text="Exit", width=10, command = self.close_algebra)
+    self.exit_button.grid(row=4, pady=40)
+
+  def close_algebra(self):
+    self.end_box.destroy()
+    root.withdraw()
 
           
 
