@@ -376,10 +376,10 @@ class AlgebraEnd:
     self.end_frame = Frame(self.end_box, padx=100, pady=100, bg=background_color)
     self.end_frame.grid(row=0)
 
-    self.end_heading = Label(self.end_frame, text="Well Done", pady=15)
+    self.end_heading = Label(self.end_frame, text="Well Done", pady=15, bg=background_color)
     self.end_heading.grid(row=0)
 
-    self.exit_button = Button(self.end_frame, text="Exit", width=10, command = self.close_algebra)
+    self.exit_button = Button(self.end_frame, text="Exit", width=10, command = self.close_algebra, bg="red")
     self.exit_button.grid(row=4, pady=40)
 
   def close_algebra(self):
