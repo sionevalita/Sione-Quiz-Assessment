@@ -449,10 +449,12 @@ class QuizTrig:
           score+=1
           score_label.configure(text=score)
           self.confirm_button.config(text="Confirm")
+          self.TrigEnd_Screen()
         else:
           score+=0
           score_label.configure(text="The correct answer was: " + trigonometry_questions_answers[trig_qnum][5])
           self.confirm_button.config(text = "Confirm")
+          self.TrigEnd_Screen()
           
       else:
         if choice == 0:
@@ -470,6 +472,29 @@ class QuizTrig:
             self.confirm_button.configure(text="Confirm")
             self.trig_questions_setup()
 
+    def TrigEnd_Screen(self):
+      root.withdraw()
+      open_endscrn = TrigEnd()
+
+
+class TrigEnd:
+    def __init__(self):
+      background_color = "#b7d7bf"
+      self.end_box = Toplevel(root)
+      self.end_box.title("End Box")
+
+      self.end_frame = Frame(self.end_box, padx=100, pady=100, bg=background_color)
+      self.end_frame.grid(row=0)
+
+      self.end_heading = Label(self.end_frame, text="Well Done", pady=15, bg=background_color)
+      self.end_heading.grid(row=0)
+
+      self.exit_button = Button(self.end_frame, text="Exit", width=10, command = self.close_trig, bg="red")
+      self.exit_button.grid(row=4, pady=40)
+
+    def close_trig(self):
+      self.end_box.destroy()
+      root.withdraw()
 
 
 
