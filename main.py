@@ -4,20 +4,20 @@ from PIL import ImageTk, Image
 global score
 
 #list that the user's name will be stored in
-names_list=[]
+names_list = []
 
 #list that all the asked algebra questions will be stored in
-asked_algebra=[]
+asked_algebra = []
 
 #list that all the asked trigonometry questions will be stored in
-asked_trig=[]
+asked_trig = []
 
 #list that all the asked calculus questions will be stored in
-asked_calculus=[]
+asked_calculus = []
 
 
 #dictionary that stores the questions and answer for algebra questions and answers
-algebra_questions_answers ={
+algebra_questions_answers = {
   1:["What does a linear graph look like?",#index 0, item 1 will be the question
   'A donut',#index 1, item 2 will be the first answer choice
   'A straight line',#index 2, item 3 will be the second answer choice
@@ -61,7 +61,7 @@ algebra_questions_answers ={
 
 
 #dictionary for trigonometry questions and answers
-trigonometry_questions_answers={
+trigonometry_questions_answers = {
 1:["What is a more efficient way of remembering the trigonometry functions?",#index 0, item 1 will be the question
 'Google it',#index 1, item 2 will be the first answer choice
 'S0H CUT T0@',#index 2, item 3 will be the second answer choice
@@ -103,7 +103,7 @@ trigonometry_questions_answers={
 1],#index 6 item 7 will be the index position of the right answer
 }
 
-
+#dictionary for calculus questions and answers
 calculus_questions_answers={
 1:["Based on Degree two function: ? x (? f) = ?",#index 0, item 1 will be the question
 '0',#index 1, item 2 will be the first answer choice
@@ -177,30 +177,30 @@ def calculus_randomiser():
 #Starting page of the quiz
 class QuizStarter:
     def __init__(self, master):
-        background_color="#b7d7bf"
+        background_color = "#b7d7bf"
         #frame setup
-        self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
+        self.quiz_frame = Frame(master, bg = background_color, padx = 100, pady = 100)
         self.quiz_frame.grid()
 
         #Label widget for heading
         self.heading_label = Label(self.quiz_frame, text = "MRGS Math Quiz", font = ("Tw Cent Mt", "18", "bold"),bg = background_color)
-        self.heading_label.grid(row=0)
+        self.heading_label.grid(row = 0)
 
         #Label for user prompt
-        self.user_label = Label (self.quiz_frame, text = "Please enter your name:", font =("Tw Cent Mt", "10"),bg = background_color)
-        self.user_label.grid(row=2,pady=9)
+        self.user_label = Label (self.quiz_frame, text = "Please enter your name:", font = ("Tw Cent Mt", "10"),bg = background_color)
+        self.user_label.grid(row = 2,pady = 9)
 
         #users input is taken by an entry Widget
         self.entry_box = Entry(self.quiz_frame)
-        self.entry_box.grid(row=3, pady=10)
+        self.entry_box.grid(row = 3, pady= 10 )
 
         #exit button for rage quitters      
-        self.exit_button = Button(self.quiz_frame, text="Exit", bg= "red", command=self.quiz_exit)
-        self.exit_button.grid(row=5)
+        self.exit_button = Button(self.quiz_frame, text = "Exit", bg = "red", command = self.quiz_exit)
+        self.exit_button.grid(row = 5)
         #self.exit_button.place(x=-90, y=208)
 
         #continue Button
-        self.continue_button = Button(self.quiz_frame, text="continue", bg="#d3d3d3", command=self.name_collection)
+        self.continue_button = Button(self.quiz_frame, text = "continue", bg = "#d3d3d3", command = self.name_collection)
         self.continue_button.grid(row=4)
 
         #image
@@ -209,24 +209,24 @@ class QuizStarter:
         self.heading_image = ImageTk.PhotoImage(self.heading_image)
 
        #image Label
-        self.image_label = Label(self.quiz_frame, image=self.heading_image, bg=background_color)
+        self.image_label = Label(self.quiz_frame, image = self.heading_image, bg = background_color)
        #self.heading_image.grid(row=0, column=1)
-        self.image_label.grid(row=1)
+        self.image_label.grid(row = 1)
 
     #command for continue button
     def name_collection(self):
       name = self.entry_box.get()
-      if name.strip() !="" and len(name) < 16:#if the name is less than 16 characters then the user will proceed
+      if name.strip() !="" and len(name) <= 16:#if the name is less than 16 characters then the user will proceed
           names_list.append(name)
           print(names_list)
           self.quiz_frame.destroy()
           QuizPicker(root)
       #check to see if name is more than 16 characters
       elif len(name) > 16:
-          self.user_label.config(text="Name must be less than 16 characters")
+          self.user_label.config(text = "Name must be less than 16 characters",fg="red")
       #check to see if the user left the name entry box empty    
       elif len(name) ==0:
-          self.user_label.config(text="You cannot leave entry box")
+          self.user_label.config(text="You cannot leave entry box empty", fg="red")
         
     
     #command for exit button
@@ -238,26 +238,26 @@ class QuizStarter:
 #Page where the user will pick which math topic they want to do
 class QuizPicker:
     def __init__(self, master):
-        background_color="#b7d7bf"
+        background_color = "#b7d7bf"
         #frame setup
         self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
         self.quiz_frame.grid()
         
         #Label that wil ask the user what math topic they want to learn about
-        self.heading_label=Label(self.quiz_frame, text="Hello " + names_list[0] + ", what topic do you want to learn about?",font=("Tw Cent Mt", "14", "bold"))
-        self.heading_label.grid(row=1)
+        self.heading_label = Label(self.quiz_frame, text = "Hello " + names_list[0] + ", what topic do you want to learn about?",font = ("Tw Cent Mt", "14", "bold"))
+        self.heading_label.grid(row = 1)
 
         #algebra button
-        self.algebra_button = Button(self.quiz_frame, text="Algebra(Level 1)", command=self.quiz_algebra)
-        self.algebra_button.grid(row= 2)
+        self.algebra_button = Button(self.quiz_frame, text="Algebra(Level 1)", command = self.quiz_algebra)
+        self.algebra_button.grid(row = 2)
 
         #trigonometry button
-        self.trigonometry_button = Button(self.quiz_frame, text="Trigonometry", command=self.quiz_trig)
-        self.trigonometry_button.grid(row=3)
+        self.trigonometry_button = Button(self.quiz_frame, text = "Trigonometry", command = self.quiz_trig)
+        self.trigonometry_button.grid(row = 3)
 
         #calculus button
-        self.calculus_button = Button(self.quiz_frame, text="Calculus", command = self.Quiz_calculus)
-        self.calculus_button.grid(row=4)
+        self.calculus_button = Button(self.quiz_frame, text = "Calculus", command = self.Quiz_calculus)
+        self.calculus_button.grid(row = 4)
 
         #command for algebra button that directs the user to the algebra quiz 
     def quiz_algebra(self):
@@ -279,7 +279,7 @@ class QuizPicker:
 #Algebra quiz
 class QuizAlgebra:
     def __init__(self, master):
-        background_color="#b7d7bf"
+        background_color ="#b7d7bf"
         #frame setup
         self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
         self.quiz_frame.grid()
@@ -288,14 +288,14 @@ class QuizAlgebra:
         algebra_randomiser()
 
         #Question label widget 
-        self.question_label = Label(self.quiz_frame, text = algebra_questions_answers[algebra_qnum][0],bg=background_color, font=("Tw Cent Mt", "11", "bold", "italic"))
+        self.question_label = Label(self.quiz_frame, text = algebra_questions_answers[algebra_qnum][0],bg = background_color, font = ("Tw Cent Mt", "11", "bold", "italic"))
         self.question_label.grid(row = 0)
 
         #holds the value of radio buttons
         self.var1 = IntVar()
 
         #radio button 1
-        self.ac1 = Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][1], font = ("Tw Cent Mt", "11", "bold"),value = 1, pady = 10,variable=self.var1, indicator = 0)
+        self.ac1 = Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][1], font = ("Tw Cent Mt", "11", "bold"),value = 1, pady = 10,variable = self.var1, indicator = 0)
         self.ac1.grid(row = 1)
 
         #radio button 2
@@ -351,7 +351,7 @@ class QuizAlgebra:
           
       else:
         if choice == 0:#if user didn't pick an option
-          score_label.configure(text = "You have not selected an option.")
+          score_label.configure(text = "You have not selected an option.",fg="red")
           choice = self.var1.get()
         else:#if choice is made
           if choice == algebra_questions_answers[algebra_qnum][6]: 
@@ -468,7 +468,7 @@ class QuizTrig:
           
       else:
         if choice == 0:
-          score_label.configure(text = "You have not selected an option.")
+          score_label.configure(text = "You have not selected an option.",fg="red")
           choice = self.var1.get()
         else:#if choice is made
           if choice == trigonometry_questions_answers[trig_qnum][6]: 
@@ -586,7 +586,7 @@ class QuizCalculus:
             
         else:
           if choice == 0:
-            score_label.configure(text = "You have not selected an option.")
+            score_label.configure(text = "You have not selected an option.",fg="red")
             choice = self.var1.get()
           else:#if choice is made
             if choice == calculus_questions_answers[calculus_qnum][6]: #if user gets the question right
