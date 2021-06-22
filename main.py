@@ -177,17 +177,17 @@ def calculus_randomiser():
 #Starting page of the quiz
 class QuizStarter:
     def __init__(self, master):
-        background_color = "#b7d7bf"
+        background_color = "#43BCCD"
         #frame setup
         self.quiz_frame = Frame(master, bg = background_color, padx = 100, pady = 100)
         self.quiz_frame.grid()
 
         #Label widget for heading
-        self.heading_label = Label(self.quiz_frame, text = "MRGS Math Quiz", font = ("Tw Cent Mt", "18", "bold"),bg = background_color)
+        self.heading_label = Label(self.quiz_frame, text = "MRGS Math Quiz", font = ("Tw Cent Mt", "18", "bold"),bg = background_color, fg="#FF7733")
         self.heading_label.grid(row = 0)
 
         #Label for user prompt
-        self.user_label = Label (self.quiz_frame, text = "Please enter your name:", font = ("Tw Cent Mt", "10"),bg = background_color)
+        self.user_label = Label (self.quiz_frame, text = "Please enter your name:", font = ("Tw Cent Mt", "10","bold"),bg = background_color, fg="#FF7733")
         self.user_label.grid(row = 2,pady = 9)
 
         #users input is taken by an entry Widget
@@ -238,25 +238,25 @@ class QuizStarter:
 #Page where the user will pick which math topic they want to do
 class QuizPicker:
     def __init__(self, master):
-        background_color = "#b7d7bf"
+        background_color = "#43BCCD"
         #frame setup
         self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
         self.quiz_frame.grid()
         
         #Label that wil ask the user what math topic they want to learn about
-        self.heading_label = Label(self.quiz_frame, text = "Hello " + names_list[0] + ", what topic do you want to learn about?",font = ("Tw Cent Mt", "14", "bold"))
+        self.heading_label = Label(self.quiz_frame, text = "Hello " + names_list[0] + ", what topic do you want to learn about?",font = ("Tw Cent Mt", "14", "bold"),fg="#FF7733")
         self.heading_label.grid(row = 1)
 
         #algebra button
-        self.algebra_button = Button(self.quiz_frame, text="Algebra(Level 1)", command = self.quiz_algebra)
+        self.algebra_button = Button(self.quiz_frame, text="Algebra(Level 1)", command = self.quiz_algebra, fg="#FF7733")
         self.algebra_button.grid(row = 2)
 
         #trigonometry button
-        self.trigonometry_button = Button(self.quiz_frame, text = "Trigonometry", command = self.quiz_trig)
+        self.trigonometry_button = Button(self.quiz_frame, text = "Trigonometry", command = self.quiz_trig, fg="#FF7733")
         self.trigonometry_button.grid(row = 3)
 
         #calculus button
-        self.calculus_button = Button(self.quiz_frame, text = "Calculus", command = self.Quiz_calculus)
+        self.calculus_button = Button(self.quiz_frame, text = "Calculus", command = self.Quiz_calculus, fg="#FF7733")
         self.calculus_button.grid(row = 4)
 
         #command for algebra button that directs the user to the algebra quiz 
@@ -279,7 +279,7 @@ class QuizPicker:
 #Algebra quiz
 class QuizAlgebra:
     def __init__(self, master):
-        background_color ="#b7d7bf"
+        background_color = "#43BCCD"
         #frame setup
         self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
         self.quiz_frame.grid()
@@ -288,34 +288,34 @@ class QuizAlgebra:
         algebra_randomiser()
 
         #Question label widget 
-        self.question_label = Label(self.quiz_frame, text = algebra_questions_answers[algebra_qnum][0],bg = background_color, font = ("Tw Cent Mt", "11", "bold", "italic"))
+        self.question_label = Label(self.quiz_frame, text = algebra_questions_answers[algebra_qnum][0],bg = background_color, font = ("Tw Cent Mt", "11", "bold", "italic"), fg="#FF7733")
         self.question_label.grid(row = 0)
 
         #holds the value of radio buttons
         self.var1 = IntVar()
 
         #radio button 1
-        self.ac1 = Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][1], font = ("Tw Cent Mt", "11", "bold"),value = 1, pady = 10,variable = self.var1, indicator = 0)
+        self.ac1 = Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][1], font = ("Tw Cent Mt", "11", "bold"), fg="#FF7733" ,value = 1, pady = 10,variable = self.var1, indicator = 0)
         self.ac1.grid(row = 1)
 
         #radio button 2
-        self.ac2 = Radiobutton(self.quiz_frame, text = algebra_questions_answers[algebra_qnum][2], font = ("Tw Cent Mt", "11", "bold"),value = 2, pady = 10,variable=self.var1, indicator = 0)
+        self.ac2 = Radiobutton(self.quiz_frame, text = algebra_questions_answers[algebra_qnum][2], font = ("Tw Cent Mt", "11", "bold"), fg="#FF7733", value = 2, pady = 10,variable=self.var1, indicator = 0)
         self.ac2.grid(row = 2)
 
         #radio button 3
-        self.ac3= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][3], font = ("Tw Cent Mt", "11", "bold"),value = 3, pady = 10, variable=self.var1, indicator = 0)
+        self.ac3= Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][3], font = ("Tw Cent Mt", "11", "bold"), fg="#FF7733", value = 3, pady = 10, variable=self.var1, indicator = 0)
         self.ac3.grid(row = 3)
 
         #radio button 4
-        self.ac4 = Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][4], font = ("Tw Cent Mt", "11", "bold"),value=4, pady=10, variable=self.var1, indicator = 0)
+        self.ac4 = Radiobutton(self.quiz_frame, text=algebra_questions_answers[algebra_qnum][4], font = ("Tw Cent Mt", "11", "bold"), fg="#FF7733", value=4, pady=10, variable=self.var1, indicator = 0)
         self.ac4.grid(row=4)
 
         #confirm Button
-        self.confirm_button = Button(self.quiz_frame, text="Confirm", command = self.algebra_test_progress)
+        self.confirm_button = Button(self.quiz_frame, text="Confirm", command = self.algebra_test_progress, fg="#FF7733")
         self.confirm_button.grid(row=5)
 
         #score label
-        self.score_label = Label(self.quiz_frame, text="SCORE", bg=background_color)
+        self.score_label = Label(self.quiz_frame, text="SCORE", bg=background_color, fg="#FF7733")
         self.score_label.grid(row=6, pady=10)
 
     #Method to randomise question label and radio buttons 
@@ -351,7 +351,7 @@ class QuizAlgebra:
           
       else:
         if choice == 0:#if user didn't pick an option
-          score_label.configure(text = "You have not selected an option.",fg="red")
+          score_label.configure(text = "You have not selected an option.", fg="red")
           choice = self.var1.get()
         else:#if choice is made
           if choice == algebra_questions_answers[algebra_qnum][6]: 
@@ -376,7 +376,8 @@ class QuizAlgebra:
 #End screen class for algebra quiz
 class AlgebraEnd:
   def __init__(self):
-    background_color = "#b7d7bf"#background colour is reclining green
+    background_color = "#43BCCD" #background colour 
+
     self.end_box = Toplevel(root)#Create a window on top of the root window
     self.end_box.title("End Box")
 
@@ -385,7 +386,7 @@ class AlgebraEnd:
     self.end_frame.grid(row=0)
 
     #Label that will congratualte the user
-    self.end_heading = Label(self.end_frame, text="Well Done", pady=15, bg=background_color)
+    self.end_heading = Label(self.end_frame, text="Well Done", pady=15, bg=background_color, fg="#FF7733")
     self.end_heading.grid(row=0)
 
     #exit button
@@ -402,7 +403,7 @@ class AlgebraEnd:
 #Trigonometry Quiz
 class QuizTrig:
     def __init__(self,master):
-        background_color = "#b7d7bf"
+        background_color = "#43BCCD"
         #frame setup
         self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
         self.quiz_frame.grid()
@@ -411,33 +412,33 @@ class QuizTrig:
         trig_randomiser()
 
         #Question label widget 
-        self.question_label = Label(self.quiz_frame, text = trigonometry_questions_answers[trig_qnum][0],bg=background_color)
+        self.question_label = Label(self.quiz_frame, text = trigonometry_questions_answers[trig_qnum][0],bg=background_color, fg="#FF7733")
         self.question_label.grid(row=0)
          #holds the value of radio buttons
         self.var1=IntVar()
 
         #radio button 1
-        self.ac1= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][1], font=("Tw Cent Mt", "11", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
+        self.ac1= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][1],fg="#FF7733", font=("Tw Cent Mt", "11", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
         self.ac1.grid(row=1)
 
         #radio button 2
-        self.ac2= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][2], font=("Tw Cent Mt", "11", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
+        self.ac2= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][2],fg="#FF7733", font=("Tw Cent Mt", "11", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
         self.ac2.grid(row=2)
 
         #radio button 3
-        self.ac3= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][3], font=("Tw Cent Mt", "11", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
+        self.ac3= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][3],fg="#FF7733", font=("Tw Cent Mt", "11", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
         self.ac3.grid(row=3)
 
         #radio button 4
-        self.ac4= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][4], font=("Tw Cent Mt", "11", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
+        self.ac4= Radiobutton(self.quiz_frame, text=trigonometry_questions_answers[trig_qnum][4], fg="#FF7733", font=("Tw Cent Mt", "11", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
         self.ac4.grid(row=4)
 
         #confirm Button
-        self.confirm_button = Button(self.quiz_frame, text="Confirm",command=self.trig_test_progress)
+        self.confirm_button = Button(self.quiz_frame, text="Confirm", fg="#FF7733", command=self.trig_test_progress)
         self.confirm_button.grid(row=5)
 
         #score label
-        self.score_label = Label(self.quiz_frame, text="SCORE", bg=background_color)
+        self.score_label = Label(self.quiz_frame, text="SCORE", bg=background_color, fg="#FF7733")
         self.score_label.grid(row=6, pady=10)
 
     #Method that will setup questions and answer choices when continue button is pressed
@@ -489,7 +490,7 @@ class QuizTrig:
 #End screen class for trig quiz
 class TrigEnd:
     def __init__(self):
-      background_color = "#b7d7bf"
+      background_color = "#43BCCD"
       self.end_box = Toplevel(root)#creates another window on top of the root window
       self.end_box.title("End Box")
 
@@ -498,7 +499,7 @@ class TrigEnd:
       self.end_frame.grid(row=0)
 
       #heading label that will congratulate the user
-      self.end_heading = Label(self.end_frame, text="Well Done", pady=15, bg=background_color)
+      self.end_heading = Label(self.end_frame, text="Well Done", pady=15, fg="#FF7733", bg=background_color)
       self.end_heading.grid(row=0)
 
       #exit button
@@ -517,7 +518,7 @@ class TrigEnd:
 #Calculus quiz class
 class QuizCalculus:
   def __init__(self, master):
-        background_color="#b7d7bf"
+        background_color="#43BCCD"
         #frame setup
         self.quiz_frame = Frame(master, bg = background_color, padx=100, pady=100)
         self.quiz_frame.grid()
@@ -526,34 +527,34 @@ class QuizCalculus:
         calculus_randomiser()
 
         #Question label widget 
-        self.question_label = Label(self.quiz_frame, text = calculus_questions_answers[calculus_qnum][0],bg=background_color)
+        self.question_label = Label(self.quiz_frame, text = calculus_questions_answers[calculus_qnum][0], fg="#FF7733", bg=background_color)
         self.question_label.grid(row=0)
 
         #holds the value of radio buttons
         self.var1=IntVar()
 
         #radio button 1
-        self.ac1= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][1], font=("Tw Cent Mt", "11", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
+        self.ac1= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][1], fg="#FF7733", font=("Tw Cent Mt", "11", "bold"),value=1, pady=10,variable=self.var1, indicator=0)
         self.ac1.grid(row=1)
 
         #radio button 2
-        self.ac2= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][2], font=("Tw Cent Mt", "11", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
+        self.ac2= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][2],fg="#FF7733", font=("Tw Cent Mt", "11", "bold"),value=2, pady=10,variable=self.var1, indicator=0)
         self.ac2.grid(row=2)
 
         #radio button 3
-        self.ac3= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][3], font=("Tw Cent Mt", "11", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
+        self.ac3= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][3],fg="#FF7733", font=("Tw Cent Mt", "11", "bold"),value=3, pady=10, variable=self.var1, indicator=0)
         self.ac3.grid(row=3)
 
         #radio button 4
-        self.ac4= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][4], font=("Tw Cent Mt", "11", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
+        self.ac4= Radiobutton(self.quiz_frame, text=calculus_questions_answers[calculus_qnum][4],fg="#FF7733", font=("Tw Cent Mt", "11", "bold"),value=4, pady=10, variable=self.var1, indicator=0)
         self.ac4.grid(row=4)
 
         #confirm Button
-        self.confirm_button = Button(self.quiz_frame, text="Confirm",command = self.calculus_test_progress)
+        self.confirm_button = Button(self.quiz_frame, text="Confirm", fg="#FF7733",command = self.calculus_test_progress)
         self.confirm_button.grid(row=5)
 
         #score Label
-        self.score_label = Label(self.quiz_frame, text="SCORE", bg=background_color)
+        self.score_label = Label(self.quiz_frame, text="SCORE", fg="#FF7733", bg=background_color)
         self.score_label.grid(row=6, pady=10)
 
         #Method that will setup questions and answer choices when continue button is pressed
@@ -610,7 +611,7 @@ class QuizCalculus:
 #End screen class for calculus quiz
 class CalculusEnd:
     def __init__(self):
-      background_color = "#b7d7bf"
+      background_color = "#43BCCD"
       self.end_box = Toplevel(root)
       self.end_box.title("End Box")
 
@@ -619,7 +620,7 @@ class CalculusEnd:
       self.end_frame.grid(row=0)
 
       #heading label that will congratulate the user 
-      self.end_heading = Label(self.end_frame, text="Well Done", pady=15, bg=background_color)
+      self.end_heading = Label(self.end_frame, text="Well Done", pady=15, fg="#FF7733", bg=background_color)
       self.end_heading.grid(row=0)
 
       #exit button
@@ -630,6 +631,8 @@ class CalculusEnd:
     def close_calculus(self):
       self.end_box.destroy()#destroys the end box
       root.withdraw()#hides the root window     
+
+
 
 
 
