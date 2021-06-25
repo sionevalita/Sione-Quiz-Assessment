@@ -317,6 +317,7 @@ class QuizAlgebra:
         #score label
         self.score_label = Label(self.quiz_frame, text="SCORE", bg=background_color, fg="#FF7733")
         self.score_label.grid(row=6, pady=10)
+        self.score=0
 
     #Method to randomise question label and radio buttons 
     def algebra_questions_setup(self):
@@ -331,20 +332,19 @@ class QuizAlgebra:
 
     #This is the confirm button method that will take care of the quiz progress and will check if the answer choice the user picked is right or wrong
     def algebra_test_progress(self):
-      score=0
       score_label = self.score_label
       choice = self.var1.get()
       if len(asked_algebra)>4:
         #if user picked the right answer
         if choice == algebra_questions_answers[algebra_qnum][6]:
-          score+=1
-          score_label.configure(text=score)
+          self.score+=1
+          score_label.configure(text=self.score)
           self.confirm_button.config(text="Confirm")
           self.AlgebraEnd_Screen()
 
         #if user picked the wrong answer
         else:
-          score+=0
+          self.score+=0
           score_label.configure(text="The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
           self.confirm_button.config(text = "Confirm")
           self.AlgebraEnd_Screen()
@@ -355,14 +355,14 @@ class QuizAlgebra:
           choice = self.var1.get()
         else:#if choice is made
           if choice == algebra_questions_answers[algebra_qnum][6]: 
-                    score+=1
-                    score_label.configure(text=score) 
+                    self.score+=1
+                    score_label.configure(text=self.score) 
                     self.confirm_button.config(text="Confirm")
                     self.algebra_questions_setup()
 
           #if user picked the worng answer
           else:
-            score+=0
+            self.score+=0
             score_label.configure(text = "The correct answer was: " + algebra_questions_answers[algebra_qnum][5])
             self.confirm_button.configure(text="Confirm")
             self.algebra_questions_setup()
@@ -440,6 +440,7 @@ class QuizTrig:
         #score label
         self.score_label = Label(self.quiz_frame, text="SCORE", bg=background_color, fg="#FF7733")
         self.score_label.grid(row=6, pady=10)
+        self.score = 0
 
     #Method that will setup questions and answer choices when continue button is pressed
     def trig_questions_setup(self):
@@ -452,17 +453,16 @@ class QuizTrig:
 
     #This is the confirm button method that will take care of the quiz progress and will check if the answer choice the user picked is right or wrong
     def trig_test_progress(self):
-      score=0
       score_label = self.score_label
       choice = self.var1.get()
       if len(asked_trig)>4:
         if choice == trigonometry_questions_answers[trig_qnum][6]:
-          score+=1
-          score_label.configure(text=score)
+          self.score+=1
+          score_label.configure(text=self.score)
           self.confirm_button.config(text="Confirm")
           self.TrigEnd_Screen()
         else:
-          score+=0
+          self.score+=0
           score_label.configure(text="The correct answer was: " + trigonometry_questions_answers[trig_qnum][5])
           self.confirm_button.config(text = "Confirm")
           self.TrigEnd_Screen()
@@ -473,12 +473,12 @@ class QuizTrig:
           choice = self.var1.get()
         else:#if choice is made
           if choice == trigonometry_questions_answers[trig_qnum][6]: 
-                    score+=1
-                    score_label.configure(text=score) 
+                    self.score+=1
+                    score_label.configure(text=self.score) 
                     self.confirm_button.config(text="Confirm")
                     self.trig_questions_setup()
           else:
-            score+=0
+            self.score+=0
             score_label.configure(text = "The correct answer was: " + trigonometry_questions_answers[trig_qnum][5])
             self.confirm_button.configure(text="Confirm")
             self.trig_questions_setup()
@@ -556,6 +556,7 @@ class QuizCalculus:
         #score Label
         self.score_label = Label(self.quiz_frame, text="SCORE", fg="#FF7733", bg=background_color)
         self.score_label.grid(row=6, pady=10)
+        self.score = 0
 
         #Method that will setup questions and answer choices when continue button is pressed
   def calculus_questions_setup(self):
@@ -568,19 +569,18 @@ class QuizCalculus:
 
     #This is the confirm button method that will take care of the quiz progress and will check if the answer choice the user picked is right or wrong
   def calculus_test_progress(self):
-        score=0
         score_label = self.score_label
         choice = self.var1.get()
         if len(asked_calculus)>4:
           #if user gets the question right
           if choice == calculus_questions_answers[calculus_qnum][6]:
-            score+=1
-            score_label.configure(text=score)
+            self.score+=1
+            score_label.configure(text=self.score)
             self.confirm_button.config(text="Confirm")
             self.CalculusEnd_Screen()
           else:
             #if user gets the question wrong
-            score+=0
+            self.score+=0
             score_label.configure(text="The correct answer was: " + calculus_questions_answers[calculus_qnum][5])
             self.confirm_button.config(text = "Confirm")
             self.CalculusEnd_Screen()
@@ -591,12 +591,12 @@ class QuizCalculus:
             choice = self.var1.get()
           else:#if choice is made
             if choice == calculus_questions_answers[calculus_qnum][6]: #if user gets the question right
-                      score+=1
-                      score_label.configure(text=score) 
+                      self.score+=1
+                      score_label.configure(text=self.score) 
                       self.confirm_button.config(text="Confirm")
                       self.calculus_questions_setup()
             else:
-              score+=0
+              self.score+=0
               #if user gets the qestion wrong
               score_label.configure(text = "The correct answer was: " + calculus_questions_answers[calculus_qnum][5])
               self.confirm_button.configure(text="Confirm")
